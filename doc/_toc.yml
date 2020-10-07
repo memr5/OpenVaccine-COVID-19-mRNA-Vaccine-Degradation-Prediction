@@ -1,0 +1,27 @@
+- file: Introduction/Introduction.md
+
+- part : Overview
+  chapters:
+    - file: Overview/description.md
+    - file: Overview/evaluation.md
+
+- part : Things We Have Tried
+  chapters:
+      - file: Things_we_have_tried/CV_strategy.md 
+
+- part : Our Solution
+  chapters:
+      - file: Our_solution/index.md 
+      
+- part : Things Dose't Work
+  chapters:
+      - file: Things_dos_not_work/Trust_on_CV.md 
+      - file: Things_dos_not_work/Stratification.md 
+
+- part : reference study material
+  chapters:
+      - file: Great_material/index.md 
+
+- part : Great Discussion
+  chapters:
+      - file: Great_discussion/tsne_visualization.md 

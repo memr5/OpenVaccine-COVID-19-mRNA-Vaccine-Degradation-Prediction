@@ -1,0 +1,8 @@
+# Book settings
+title: 🍀 Co-weed'19
+author: Vatsal Parsaniya , Meet Ranoliya
+logo: logo_1.png
+
+latex:
+  latex_documents:
+    targetname: book.tex
