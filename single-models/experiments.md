@@ -92,3 +92,6 @@ GRU-LSTM+GRU + Tx(dm-128,nh-4,dff-256) W/O POS-E|0.2088579624891281 & 0.22903614
 |---|---|---|---|---|
 |CONV + GRU + SkipCONV + 2GRU|0.20700212121009826 & 0.22679129649648233||PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Next Neighbour + BPP_nonzero + Val on SN_filter==1 + AbsDist between BasePair + Stratified on SNR + Grouped by ids|[V126](https://www.kaggle.com/meemr5/openvaccine-transformers-lstm-gru?scriptVersionId=44073844)|
 |CONV + GRU + SkipCONV + LSTM+GRU|0.2050697386264801 & 0.22628858296710197||PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Next Neighbour + BPP_nonzero + Val on SN_filter==1 + AbsDist between BasePair + Stratified on SNR + Grouped by ids|[Forked-V1](https://www.kaggle.com/meemr5/fork-of-openvaccine-transformers-lstm-gru?scriptVersionId=44079856)|
+
+---
+---
