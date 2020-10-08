@@ -1,4 +1,4 @@
-# Details of Experiments
+# Meet's Single Models Details
 
 ## Machine Learning Models
 

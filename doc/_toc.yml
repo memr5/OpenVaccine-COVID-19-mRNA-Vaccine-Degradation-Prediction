@@ -1,27 +1,35 @@
 - file: Introduction/Introduction.md
 
-- part : Project Overview
+- part : 🤔 Project Overview
   chapters:
     - file: Project_Overview/description.md
     - file: Project_Overview/evaluation.md
 
-- part : Things we tried
+- part : 🔍 Exploratory Data Analysis
+  chapters:
+    - file: EDA/openvaccine-eda.ipynb
+    - file: EDA/openvaccine-interesting-visualizations.ipynb
+
+- part : 🧪 Things we tried
   chapters:
       - file: Things_we_tried/CV_strategy.md 
       - file: Things_we_tried/openvaccine-feature-extraction.ipynb 
       - file: Things_we_tried/augmentation.md
       - file: Things_we_tried/openvaccine-t-sne-rapids.ipynb
 
-- part : Our Solution
+- part : 💡 Our Solution
   chapters:
-      - file: Our_solution/Single_model_Perfomance.md
       - file: Our_solution/openvaccine-model-training-augmentation.ipynb
+      - file: Our_solution/Single_model_Perfomance.md
+      - file: Our_solution/openvaccine-transformers-lstm-gru.ipynb
+      - file: Our_solution/single-model-results.md
+      - file: Our_solution/ensemblingResults.md
 
-- part : Reference Material
+- part : 📝 Reference Material
   chapters:
       - file: Reference_material/index.md 
 
-- part : Discussion Forum Material
+- part : 🗣 Discussion Forum Material
   chapters:
       - file: Discussion_material/tsne_visualization.md 
       - file: Discussion_material/Graph_representation_of_RNA.md
