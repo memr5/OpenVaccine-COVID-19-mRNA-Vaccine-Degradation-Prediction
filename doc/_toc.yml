@@ -5,6 +5,11 @@
     - file: Project_Overview/description.md
     - file: Project_Overview/evaluation.md
 
+- part : Exploratory Data Analysis
+  chapters:
+    - file: EDA/openvaccine-eda.ipynb
+    - file: EDA/openvaccine-interesting-visualizations.ipynb
+
 - part : Things we tried
   chapters:
       - file: Things_we_tried/CV_strategy.md 
@@ -14,8 +19,11 @@
 
 - part : Our Solution
   chapters:
-      - file: Our_solution/Single_model_Perfomance.md
       - file: Our_solution/openvaccine-model-training-augmentation.ipynb
+      - file: Our_solution/Single_model_Perfomance.md
+      - file: Our_solution/openvaccine-transformers-lstm-gru.ipynb
+      - file: Our_solution/single-model-results.md
+      - file: Our_solution/ensemblingResults.md
 
 - part : Reference Material
   chapters:

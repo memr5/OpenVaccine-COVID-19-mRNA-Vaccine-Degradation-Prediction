@@ -1,4 +1,4 @@
-# Single Model Perfomance
+# Vatsal's Single Model Details
 
 ## [💉OpenVaccine: Model Training [augmentation]](https://www.kaggle.com/vatsalparsaniya/openvaccine-model-training-augmentation)
 
