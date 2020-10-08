@@ -1,0 +1,643 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ensemble Results &#8212; 🍀 Co-weed&#39;19</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Material" href="../Reference_material/index.html" />
+    <link rel="prev" title="Meet’s Single Models Details" href="single-model-results.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo_1.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">🍀 Co-weed'19</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Introduction/Introduction.html">
+   🙋🏻‍♂️ Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  🤔 Project Overview
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Project_Overview/description.html">
+   Description
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Project_Overview/evaluation.html">
+   Evaluation
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  🔍 Exploratory Data Analysis
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../EDA/openvaccine-eda.html">
+   EDA by Vatsal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../EDA/openvaccine-interesting-visualizations.html">
+   EDA by Meet
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  🧪 Things we tried
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Things_we_tried/CV_strategy.html">
+   Stratification by the signal_to_noise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Things_we_tried/openvaccine-feature-extraction.html">
+   Feature extraction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Things_we_tried/augmentation.html">
+   structure augmentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Things_we_tried/openvaccine-t-sne-rapids.html">
+   T-SNE - Rapids
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  💡 Our Solution
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="openvaccine-model-training-augmentation.html">
+   Vatsal’s Code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Single_model_Perfomance.html">
+   Vatsal’s Single Model Details
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="openvaccine-transformers-lstm-gru.html">
+   Meet’s code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="single-model-results.html">
+   Meet’s Single Models Details
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Ensemble Results
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  📝 Reference Material
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Reference_material/index.html">
+   Material
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  🗣 Discussion Forum Material
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Discussion_material/tsne_visualization.html">
+   TSNE visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Discussion_material/Graph_representation_of_RNA.html">
+   Graph representation of RNA
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Our_solution/ensemblingResults.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#weighted-ensembles">
+   Weighted Ensembles
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ensembles-on-augmented-data-models">
+     Ensembles on Augmented Data Models
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ensembles-with-vatsal">
+     Ensembles with Vatsal
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="ensemble-results">
+<h1>Ensemble Results<a class="headerlink" href="#ensemble-results" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="weighted-ensembles">
+<h2>Weighted Ensembles<a class="headerlink" href="#weighted-ensembles" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Ensemble No.</p></th>
+<th class="head"><p>Model 1</p></th>
+<th class="head"><p>Model 2</p></th>
+<th class="head"><p>Local CV</p></th>
+<th class="head"><p>Public LB</p></th>
+<th class="head"><p>Weights</p></th>
+<th class="head"><p>Link</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43399062">V62</a></p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43213601">V49</a></p></td>
+<td><p>0.21628251998982737</p></td>
+<td><p></p></td>
+<td><p>0.48</p></td>
+<td><p><span class="xref myst">Sub</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p><span class="xref myst">Ensemble 1</span></p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43333635">V59</a></p></td>
+<td><p>0.21627962528251687</p></td>
+<td><p></p></td>
+<td><p>0.98</p></td>
+<td><p><span class="xref myst">Sub</span></p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p><span class="xref myst">Ensemble 2</span></p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43336233">V60</a></p></td>
+<td><p>0.21457036577945687</p></td>
+<td><p></p></td>
+<td><p>0.73</p></td>
+<td><p><span class="xref myst">Sub</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p><span class="xref myst">Ensemble 3</span></p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43346922">V61</a></p></td>
+<td><p>0.2137972766699997</p></td>
+<td><p>0.25003</p></td>
+<td><p>0.82</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/submissions/17322080/17322080.raw">Sub</a></p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/submissions/17322080/17322080.raw">Ensemble 4</a></p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43182145">V45</a></p></td>
+<td><p>0.2130207660246279</p></td>
+<td><p></p></td>
+<td><p>0.81</p></td>
+<td><p><span class="xref myst">Sub</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p><span class="xref myst">Ensemble 5</span></p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43166075">V44</a></p></td>
+<td><p>0.21263909479456036</p></td>
+<td><p>0.25007</p></td>
+<td><p>0.86</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/submissions/17330121/17330121.raw">Sub</a></p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/submissions/17330121/17330121.raw">Ensemble 6</a></p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43491219">V70</a></p></td>
+<td><p>0.2117086955493154</p></td>
+<td><p>0.24969</p></td>
+<td><p>0.83</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/submissions/17334591/17334591.raw">Sub</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/submissions/17334591/17334591.raw">Ensemble 7</a></p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43158018">V39</a></p></td>
+<td><p>0.21142242156890814</p></td>
+<td><p>0.24976</p></td>
+<td><p>0.88</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/submissions/17335386/17335386.raw">Sub</a></p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/submissions/17335386/17335386.raw">Ensemble 8</a></p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43534014">V77</a></p></td>
+<td><p>0.21135398344071413</p></td>
+<td><p>0.24957</p></td>
+<td><p>0.95</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/submissions/17342399/17342399.raw">Sub</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/submissions/17342399/17342399.raw">Ensemble 9</a></p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43591459">V83</a></p></td>
+<td><p>0.21124682687258126</p></td>
+<td><p></p></td>
+<td><p>0.93</p></td>
+<td><p><span class="xref myst">Sub</span></p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p><span class="xref myst">Ensemble 10</span></p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43595128">V85</a></p></td>
+<td><p>0.210999023970225</p></td>
+<td><p>0.24915</p></td>
+<td><p>0.9</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/submissions/17354605/17354605.raw">Sub</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/submissions/17354605/17354605.raw">Ensemble 11</a></p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43614628">V89</a></p></td>
+<td><p>0.21023850531172603</p></td>
+<td><p>0.24887</p></td>
+<td><p>0.82</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/submissions/17357379/17357379.raw">Sub</a></p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/submissions/17357379/17357379.raw">Ensemble 12</a></p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43688193">V97</a></p></td>
+<td><p>0.21005807434604082</p></td>
+<td><p>0.24879</p></td>
+<td><p>0.9</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/submissions/17369085/17369085.raw">Sub</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>14</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/submissions/17369085/17369085.raw">Ensemble 13</a></p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-transformers-lstm-gru?scriptVersionId=43948406">V111</a></p></td>
+<td><p>0.20972536891604843</p></td>
+<td><p></p></td>
+<td><p>0.87</p></td>
+<td><p><span class="xref myst">Sub</span></p></td>
+</tr>
+<tr class="row-even"><td><p>15</p></td>
+<td><p><span class="xref myst">Ensemble 14</span></p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-transformers-lstm-gru?scriptVersionId=43948912">V113</a></p></td>
+<td><p>0.20866260007032134</p></td>
+<td><p>0.24685</p></td>
+<td><p>0.8</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/submissions/17417169/17417169.raw">Sub</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>16</p></td>
+<td><p><span class="xref myst">Ensemble 15</span></p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-transformers-lstm-gru?scriptVersionId=43995351">V120</a></p></td>
+<td><p>0.20862733769212136</p></td>
+<td><p></p></td>
+<td><p>0.96</p></td>
+<td><p><span class="xref myst">Sub</span></p></td>
+</tr>
+<tr class="row-even"><td><p>17</p></td>
+<td><p><span class="xref myst">Ensemble 16</span></p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-transformers-lstm-gru?scriptVersionId=43994018">V119</a></p></td>
+<td><p>0.20857113581417774</p></td>
+<td><p>0.24699</p></td>
+<td><p>0.95</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/submissions/17433548/17433548.raw">Sub</a></p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<hr class="docutils" />
+<div class="section" id="ensembles-on-augmented-data-models">
+<h3>Ensembles on Augmented Data Models<a class="headerlink" href="#ensembles-on-augmented-data-models" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Ensemble No.</p></th>
+<th class="head"><p>Model 1</p></th>
+<th class="head"><p>Model 2</p></th>
+<th class="head"><p>Local CV</p></th>
+<th class="head"><p>Public LB</p></th>
+<th class="head"><p>Weights</p></th>
+<th class="head"><p>Link</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-transformers-lstm-gru?scriptVersionId=44073844">V126</a></p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/fork-of-openvaccine-transformers-lstm-gru?scriptVersionId=44079856">ForkedV1</a></p></td>
+<td><p>0.21830475357212972</p></td>
+<td><p></p></td>
+<td><p>0.49</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+</div>
+<hr class="docutils" />
+<div class="section" id="ensembles-with-vatsal">
+<h3>Ensembles with Vatsal<a class="headerlink" href="#ensembles-with-vatsal" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Ensemble No.</p></th>
+<th class="head"><p>Model 1</p></th>
+<th class="head"><p>Model 2</p></th>
+<th class="head"><p>Local CV</p></th>
+<th class="head"><p>Public LB</p></th>
+<th class="head"><p>Weights</p></th>
+<th class="head"><p>Link</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p><span class="xref myst">Ensemble 17 - Meet</span></p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/vatsalparsaniya/openvaccine-model-training-augmentation?scriptVersionId=43901162">V12</a></p></td>
+<td><p>0.20687643697440272</p></td>
+<td><p></p></td>
+<td><p>0.77</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p><span class="xref myst">Ensemble 1</span></p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/vatsalparsaniya/openvaccine-model-training-augmentation?scriptVersionId=43878399">V11</a></p></td>
+<td><p>0.20672045113508097</p></td>
+<td><p></p></td>
+<td><p>0.92</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p><span class="xref myst">Ensemble 2</span></p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/vatsalparsaniya/openvaccine-model-training-augmentation?scriptVersionId=43901471">V13</a></p></td>
+<td><p>0.20639133444517532</p></td>
+<td><p>0.24531</p></td>
+<td><p>0.89</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/submissions/17428948/17428948.raw">Sub</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/submissions/17428948/17428948.raw">Ensemble 3</a></p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/vatsalparsaniya/openvaccine-model-training-augmentation?scriptVersionId=44067782">V15</a></p></td>
+<td><p>0.20628338447344607</p></td>
+<td><p></p></td>
+<td><p>0.92</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p><span class="xref myst">Ensemble 4</span></p></td>
+<td><p><span class="xref myst">Augmented Ensemble 1</span></p></td>
+<td><p>0.20589798885305752</p></td>
+<td><p>0.24528</p></td>
+<td><p>0.85</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/submissions/17445627/17445627.raw">Sub</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/submissions/17445627/17445627.raw">Ensemble 5</a></p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-gnn-attn-cnn-4e89a2?scriptVersionId=44173117">GCN V5</a></p></td>
+<td><p>0.20466713463037245</p></td>
+<td><p>0.24366</p></td>
+<td><p>0.83</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/submissions/17461562/17461562.raw">Sub</a></p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/submissions/17461562/17461562.raw">Ensemble 6</a></p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-gnn-attn-cnn-4e89a2?scriptVersionId=44177721">GCN V6</a></p></td>
+<td><p>0.2046281948192341</p></td>
+<td><p></p></td>
+<td><p>0.97</p></td>
+<td><p><span class="xref myst">Sub</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p><span class="xref myst">Ensemble 7</span></p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-gnn-attn-cnn-4e89a2?scriptVersionId=44184238">GCN V8</a></p></td>
+<td><p>0.20462260306400526</p></td>
+<td><p>0.24355</p></td>
+<td><p>0.99</p></td>
+<td><p><span class="xref myst">Sub</span></p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<hr class="docutils" />
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Our_solution"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="single-model-results.html" title="previous page">Meet’s Single Models Details</a>
+    <a class='right-next' id="next-link" href="../Reference_material/index.html" title="next page">Material</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Vatsal Parsaniya , Meet Ranoliya<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

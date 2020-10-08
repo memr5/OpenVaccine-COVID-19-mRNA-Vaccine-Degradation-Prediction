@@ -1,0 +1,1503 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EDA by Meet &#8212; 🍀 Co-weed&#39;19</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Stratification by the signal_to_noise" href="../Things_we_tried/CV_strategy.html" />
+    <link rel="prev" title="EDA by Vatsal" href="openvaccine-eda.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo_1.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">🍀 Co-weed'19</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Introduction/Introduction.html">
+   🙋🏻‍♂️ Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  🤔 Project Overview
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Project_Overview/description.html">
+   Description
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Project_Overview/evaluation.html">
+   Evaluation
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  🔍 Exploratory Data Analysis
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="openvaccine-eda.html">
+   EDA by Vatsal
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   EDA by Meet
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  🧪 Things we tried
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Things_we_tried/CV_strategy.html">
+   Stratification by the signal_to_noise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Things_we_tried/openvaccine-feature-extraction.html">
+   Feature extraction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Things_we_tried/augmentation.html">
+   structure augmentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Things_we_tried/openvaccine-t-sne-rapids.html">
+   T-SNE - Rapids
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  💡 Our Solution
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Our_solution/openvaccine-model-training-augmentation.html">
+   Vatsal’s Code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Our_solution/Single_model_Perfomance.html">
+   Vatsal’s Single Model Details
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Our_solution/openvaccine-transformers-lstm-gru.html">
+   Meet’s code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Our_solution/single-model-results.html">
+   Meet’s Single Models Details
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Our_solution/ensemblingResults.html">
+   Ensemble Results
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  📝 Reference Material
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Reference_material/index.html">
+   Material
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  🗣 Discussion Forum Material
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Discussion_material/tsne_visualization.html">
+   TSNE visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Discussion_material/Graph_representation_of_RNA.html">
+   Graph representation of RNA
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/EDA/openvaccine-interesting-visualizations.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/EDA/openvaccine-interesting-visualizations.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/EDA/openvaccine-interesting-visualizations.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-rna">
+   What is RNA?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-mrna">
+   What is mRNA?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-are-we-here">
+   Why are we here?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#our-goal-predict-the-degradation-rates-at-various-locations-along-rna-sequence">
+   Our Goal: Predict the degradation rates at various locations along RNA sequence
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-do-we-have">
+   What do we have?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#files">
+     Files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#columns">
+     Columns
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-necessary-libraries">
+   1. Import Necessary Libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-data">
+   2. Load Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exploratory-data-analysis">
+   3. Exploratory Data-Analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-the-test-data-was-produced">
+     How the test data was produced?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#targets-averaged-over-positions">
+     Targets Averaged over Positions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distribution-of-target-at-a-random-position">
+     Distribution of Target at a Random Position
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#errors-in-calculation-averaged-over-positions">
+     Errors in Calculation (Averaged over positions)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rna-structure">
+     RNA Structure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pair-wise-exploration-of-degradation">
+     Pair wise Exploration of Degradation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#base-pair-wise-distribution-of-reactivity">
+       Base-Pair wise Distribution of Reactivity
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="eda-by-meet">
+<h1>EDA by Meet<a class="headerlink" href="#eda-by-meet" title="Permalink to this headline">¶</a></h1>
+<h2 align='middle'>OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction</h2>
+<h3 align='middle'>Urgent need to bring the COVID-19 vaccine to mass production</h3>
+<div align='middle'> 
+    <img src='https://media.giphy.com/media/dVuyBgq2z5gVBkFtDc/giphy.gif' alt='COIVD-19 (GIPHY)'></img>
+</div><div class="section" id="what-is-rna">
+<h2>What is RNA?<a class="headerlink" href="#what-is-rna" title="Permalink to this headline">¶</a></h2>
+<p><strong>Ribonucleic acid</strong>, or RNA is one of the three major biological macromolecules that are essential for all known forms of life (along with DNA and proteins). A central tenet of molecular biology states that the flow of genetic information in a cell is from DNA through RNA to proteins: <strong>“DNA makes RNA makes protein”</strong>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="what-is-mrna">
+<h2>What is mRNA?<a class="headerlink" href="#what-is-mrna" title="Permalink to this headline">¶</a></h2>
+<p><strong>Messenger RNAs</strong>, also known as mRNA, are one of the types of RNA that are found in the cell. This particular one, like most RNAs, are made in the nucleus and then exported to the cytoplasm where the translation machinery, the machinery that actually makes proteins, binds to these mRNA molecules and reads the code on the mRNA to make a specific protein. So in general, one gene, the DNA for one gene, can be transcribed into an mRNA molecule that will end up making one specific protein.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="why-are-we-here">
+<h2>Why are we here?<a class="headerlink" href="#why-are-we-here" title="Permalink to this headline">¶</a></h2>
+<p>mRNA vaccines have taken the lead as the fastest vaccine candidates for COVID-19, but currently, they face key potential limitations. One of the biggest challenges right now is how to design super stable messenger RNA molecules (mRNA). Conventional vaccines (like your seasonal flu shots) are packaged in disposable syringes and shipped under refrigeration around the world, but that is not currently possible for mRNA vaccines.</p>
+<p>Researchers have observed that RNA molecules have a tendency to spontaneously degrade. This is a serious limitation–a single cut can render the mRNA vaccine useless. Currently, little is known on the details of where in the backbone of a given RNA is most prone to being affected. Without this knowledge, current mRNA vaccines against COVID-19 must be prepared and shipped under intense refrigeration, and are unlikely to reach more than a tiny fraction of human beings on the planet unless they can be stabilized.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="our-goal-predict-the-degradation-rates-at-various-locations-along-rna-sequence">
+<h2>Our Goal: Predict the degradation rates at various locations along RNA sequence<a class="headerlink" href="#our-goal-predict-the-degradation-rates-at-various-locations-along-rna-sequence" title="Permalink to this headline">¶</a></h2>
+</div>
+<hr class="docutils" />
+<div class="section" id="what-do-we-have">
+<h2>What do we have?<a class="headerlink" href="#what-do-we-have" title="Permalink to this headline">¶</a></h2>
+<p>We have a subset of an <strong>Eterna dataset</strong> comprising over <strong>3000 RNA molecules</strong> (which span a panoply of sequences and structures) and their <strong>degradation rates</strong> at each position.</p>
+<p>There are multiple ground truth values provided in the training data. While the submission format requires all 5 to be predicted, only the following are scored: reactivity, deg_Mg_pH10, and deg_Mg_50C.</p>
+<div class="section" id="files">
+<h3>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>train.json - the training data</p></li>
+<li><p>test.json - the test set, without any columns associated with the ground truth.</p></li>
+<li><p>sample_submission.csv - a sample submission file in the correct format</p></li>
+</ul>
+</div>
+<div class="section" id="columns">
+<h3>Columns<a class="headerlink" href="#columns" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>id - An arbitrary identifier for each sample.</p></li>
+<li><p>seq_scored - (68 in Train and Public Test, 91 in Private Test) Integer value denoting the number of positions used in scoring with predicted values. This should match the length of reactivity, deg_* and <em><em>error</em></em> columns. Note that molecules used for the Private Test will be longer than those in the Train and Public Test data, so the size of this vector will be different.</p></li>
+<li><p>seq_length - (107 in Train and Public Test, 130 in Private Test) Integer values, denotes the length of sequence. Note that molecules used for the Private Test will be longer than those in the Train and Public Test data, so the size of this vector will be different.</p></li>
+<li><p>sequence - (1x107 string in Train and Public Test, 130 in Private Test) Describes the RNA sequence, a combination of A, G, U, and C for each sample. Should be 107 characters long, and the first 68 bases should correspond to the 68 positions specified in seq_scored (note: indexed starting at 0).</p></li>
+<li><p>structure - (1x107 string in Train and Public Test, 130 in Private Test) An array of (, ), and . characters that describe whether a base is estimated to be paired or unpaired. Paired bases are denoted by opening and closing parentheses e.g. (….) means that base 0 is paired to base 5, and bases 1-4 are unpaired.</p></li>
+<li><p>reactivity - (1x68 vector in Train and Public Test, 1x91 in Private Test) An array of floating point numbers, should have the same length as seq_scored. These numbers are * reactivity values for the first 68 bases as denoted in sequence, and used to determine the likely secondary structure of the RNA sample.</p></li>
+<li><p>deg_pH10 - (1x68 vector in Train and Public Test, 1x91 in Private Test) An array of floating point numbers, should have the same length as seq_scored. These numbers are reactivity values for the first 68 bases as denoted in sequence, and used to determine the likelihood of degradation at the base/linkage after incubating without magnesium at high pH (pH 10).</p></li>
+<li><p>deg_Mg_pH10 - (1x68 vector in Train and Public Test, 1x91 in Private Test) An array of floating point numbers, should have the same length as seq_scored. These numbers are reactivity values for the first 68 bases as denoted in sequence, and used to determine the likelihood of degradation at the base/linkage after incubating with magnesium in high pH (pH 10).</p></li>
+<li><p>deg_50C - (1x68 vector in Train and Public Test, 1x91 in Private Test) An array of floating point numbers, should have the same length as seq_scored. These numbers are reactivity values for the first 68 bases as denoted in sequence, and used to determine the likelihood of degradation at the base/linkage after incubating without magnesium at high temperature (50 degrees Celsius).</p></li>
+<li><p>deg_Mg_50C - (1x68 vector in Train and Public Test, 1x91 in Private Test) An array of floating point numbers, should have the same length as seq_scored. These numbers are reactivity values for the first 68 bases as denoted in sequence, and used to determine the likelihood of degradation at the base/linkage after incubating with magnesium at high temperature (50 degrees Celsius).</p></li>
+<li><p><em><em>error</em></em> - An array of floating point numbers, should have the same length as the corresponding reactivity or deg_* columns, calculated errors in experimental values obtained in reactivity and deg_* columns.</p></li>
+<li><p>predicted_loop_type - (1x107 string) Describes the structural context (also referred to as ‘loop type’)of each character in sequence. Loop types assigned by bpRNA from Vienna RNAfold 2 structure. From the bpRNA_documentation: S: paired “Stem” M: Multiloop I: Internal loop B: Bulge H: Hairpin loop E: dangling End X: eXternal loop</p></li>
+</ul>
+<hr class="docutils" />
+<p><a class="reference external" href="https://www.kaggle.com/c/stanford-covid-vaccine/overview"><em>Competition Page</em></a></p>
+</div>
+</div>
+<div class="section" id="import-necessary-libraries">
+<h2>1. Import Necessary Libraries<a class="headerlink" href="#import-necessary-libraries" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;fivethirtyeight&#39;</span><span class="p">)</span>
+
+<span class="n">SEED</span> <span class="o">=</span> <span class="mi">2020</span>
+
+<span class="k">def</span> <span class="nf">seed_everything</span><span class="p">(</span><span class="n">SEED</span><span class="p">):</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
+<span class="c1">#     tf.random.set_seed(SEED)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;PYTHONHASHSEED&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
+
+<span class="n">seed_everything</span><span class="p">(</span><span class="n">SEED</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="load-data">
+<h2>2. Load Data<a class="headerlink" href="#load-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">PATH</span> <span class="o">=</span> <span class="s1">&#39;/kaggle/input/stanford-covid-vaccine&#39;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">PATH</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">f76549394b50</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">PATH</span> <span class="o">=</span> <span class="s1">&#39;/kaggle/input/stanford-covid-vaccine&#39;</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">PATH</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [WinError 3] The system cannot find the path specified: &#39;/kaggle/input/stanford-covid-vaccine&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">PATH</span><span class="p">,</span><span class="s1">&#39;train.json&#39;</span><span class="p">),</span><span class="n">lines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">PATH</span><span class="p">,</span><span class="s1">&#39;test.json&#39;</span><span class="p">),</span><span class="n">lines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sub</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">PATH</span><span class="p">,</span><span class="s1">&#39;sample_submission.csv&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exploratory-data-analysis">
+<h2>3. Exploratory Data-Analysis<a class="headerlink" href="#exploratory-data-analysis" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Train data shape: &quot;</span><span class="p">,</span><span class="n">train</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test data shape: &quot;</span><span class="p">,</span><span class="n">test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sample submission shape: &quot;</span><span class="p">,</span><span class="n">sub</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Train data shape:  (2400, 18)
+Test data shape:  (3634, 6)
+Sample submission shape:  (457953, 6)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Why we have different size than test data for sample submission file?</strong></p>
+<ul class="simple">
+<li><p>Test data has <strong>629</strong> samples for <strong>Public Test data</strong> &amp; new <strong>3005</strong> samples for <strong>Private Test data</strong>. (Total 629+3005 = 3634)</p></li>
+<li><p>Public test data has <strong>Sequence length of 107</strong>. Hence, for public test data there will be total <strong>(629*107) = 67,303 rows</strong></p></li>
+<li><p>Private test data has <strong>Sequence length of 130</strong>. Hence, for private test data there will be total <strong>(3005*130) = 3,90,650 rows</strong></p></li>
+<li><p>Hence, Total rows in submission = 67,303 + 3,90,650 = <strong>4,57,953</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>sequence</th>
+      <th>structure</th>
+      <th>predicted_loop_type</th>
+      <th>signal_to_noise</th>
+      <th>SN_filter</th>
+      <th>seq_length</th>
+      <th>seq_scored</th>
+      <th>reactivity_error</th>
+      <th>deg_error_Mg_pH10</th>
+      <th>deg_error_pH10</th>
+      <th>deg_error_Mg_50C</th>
+      <th>deg_error_50C</th>
+      <th>reactivity</th>
+      <th>deg_Mg_pH10</th>
+      <th>deg_pH10</th>
+      <th>deg_Mg_50C</th>
+      <th>deg_50C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>id_001f94081</td>
+      <td>GGAAAAGCUCUAAUAACAGGAGACUAGGACUACGUAUUUCUAGGUA...</td>
+      <td>.....((((((.......)))).)).((.....((..((((((......</td>
+      <td>EEEEESSSSSSHHHHHHHSSSSBSSXSSIIIIISSIISSSSSSHHH...</td>
+      <td>6.894</td>
+      <td>1</td>
+      <td>107</td>
+      <td>68</td>
+      <td>[0.1359, 0.20700000000000002, 0.1633, 0.1452, ...</td>
+      <td>[0.26130000000000003, 0.38420000000000004, 0.1...</td>
+      <td>[0.2631, 0.28600000000000003, 0.0964, 0.1574, ...</td>
+      <td>[0.1501, 0.275, 0.0947, 0.18660000000000002, 0...</td>
+      <td>[0.2167, 0.34750000000000003, 0.188, 0.2124, 0...</td>
+      <td>[0.3297, 1.5693000000000001, 1.1227, 0.8686, 0...</td>
+      <td>[0.7556, 2.983, 0.2526, 1.3789, 0.637600000000...</td>
+      <td>[2.3375, 3.5060000000000002, 0.3008, 1.0108, 0...</td>
+      <td>[0.35810000000000003, 2.9683, 0.2589, 1.4552, ...</td>
+      <td>[0.6382, 3.4773, 0.9988, 1.3228, 0.78770000000...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>id_0049f53ba</td>
+      <td>GGAAAAAGCGCGCGCGGUUAGCGCGCGCUUUUGCGCGCGCUGUACC...</td>
+      <td>.....(((((((((((((((((((((((....)))))))))).)))...</td>
+      <td>EEEEESSSSSSSSSSSSSSSSSSSSSSSHHHHSSSSSSSSSSBSSS...</td>
+      <td>0.193</td>
+      <td>0</td>
+      <td>107</td>
+      <td>68</td>
+      <td>[2.8272, 2.8272, 2.8272, 4.7343, 2.5676, 2.567...</td>
+      <td>[73705.3985, 73705.3985, 73705.3985, 73705.398...</td>
+      <td>[10.1986, 9.2418, 5.0933, 5.0933, 5.0933, 5.09...</td>
+      <td>[16.6174, 13.868, 8.1968, 8.1968, 8.1968, 8.19...</td>
+      <td>[15.4857, 7.9596, 13.3957, 5.8777, 5.8777, 5.8...</td>
+      <td>[0.0, 0.0, 0.0, 2.2965, 0.0, 0.0, 0.0, 0.0, 0....</td>
+      <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+      <td>[4.947, 4.4523, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+      <td>[4.8511, 4.0426, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,...</td>
+      <td>[7.6692, 0.0, 10.9561, 0.0, 0.0, 0.0, 0.0, 0.0...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>id_006f36f57</td>
+      <td>GGAAAGUGCUCAGAUAAGCUAAGCUCGAAUAGCAAUCGAAUAGAAU...</td>
+      <td>.....((((.((.....((((.(((.....)))..((((......)...</td>
+      <td>EEEEESSSSISSIIIIISSSSMSSSHHHHHSSSMMSSSSHHHHHHS...</td>
+      <td>8.800</td>
+      <td>1</td>
+      <td>107</td>
+      <td>68</td>
+      <td>[0.0931, 0.13290000000000002, 0.11280000000000...</td>
+      <td>[0.1365, 0.2237, 0.1812, 0.1333, 0.1148, 0.160...</td>
+      <td>[0.17020000000000002, 0.178, 0.111, 0.091, 0.0...</td>
+      <td>[0.1033, 0.1464, 0.1126, 0.09620000000000001, ...</td>
+      <td>[0.14980000000000002, 0.1761, 0.1517, 0.116700...</td>
+      <td>[0.44820000000000004, 1.4822, 1.1819, 0.743400...</td>
+      <td>[0.2504, 1.4021, 0.9804, 0.49670000000000003, ...</td>
+      <td>[2.243, 2.9361, 1.0553, 0.721, 0.6396000000000...</td>
+      <td>[0.5163, 1.6823000000000001, 1.0426, 0.7902, 0...</td>
+      <td>[0.9501000000000001, 1.7974999999999999, 1.499...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>id_0082d463b</td>
+      <td>GGAAAAGCGCGCGCGCGCGCGCGAAAAAGCGCGCGCGCGCGCGCGC...</td>
+      <td>......((((((((((((((((......))))))))))))))))((...</td>
+      <td>EEEEEESSSSSSSSSSSSSSSSHHHHHHSSSSSSSSSSSSSSSSSS...</td>
+      <td>0.104</td>
+      <td>0</td>
+      <td>107</td>
+      <td>68</td>
+      <td>[3.5229, 6.0748, 3.0374, 3.0374, 3.0374, 3.037...</td>
+      <td>[73705.3985, 73705.3985, 73705.3985, 73705.398...</td>
+      <td>[11.8007, 12.7566, 5.7733, 5.7733, 5.7733, 5.7...</td>
+      <td>[121286.7181, 121286.7182, 121286.7181, 121286...</td>
+      <td>[15.3995, 8.1124, 7.7824, 7.7824, 7.7824, 7.78...</td>
+      <td>[0.0, 2.2399, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0....</td>
+      <td>[0.0, -0.5083, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0...</td>
+      <td>[3.4248, 6.8128, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,...</td>
+      <td>[0.0, -0.8365, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0...</td>
+      <td>[7.6692, -1.3223, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>id_0087940f4</td>
+      <td>GGAAAAUAUAUAAUAUAUUAUAUAAAUAUAUUAUAGAAGUAUAAUA...</td>
+      <td>.....(((((((.((((((((((((.(((((((((....)))))))...</td>
+      <td>EEEEESSSSSSSBSSSSSSSSSSSSBSSSSSSSSSHHHHSSSSSSS...</td>
+      <td>0.423</td>
+      <td>0</td>
+      <td>107</td>
+      <td>68</td>
+      <td>[1.665, 2.1728, 2.0041, 1.2405, 0.620200000000...</td>
+      <td>[4.2139, 3.9637000000000002, 3.2467, 2.4716, 1...</td>
+      <td>[3.0942, 3.015, 2.1212, 2.0552, 0.881500000000...</td>
+      <td>[2.6717, 2.4818, 1.9919, 2.5484999999999998, 1...</td>
+      <td>[1.3285, 3.6173, 1.3057, 1.3021, 1.1507, 1.150...</td>
+      <td>[0.8267, 2.6577, 2.8481, 0.40090000000000003, ...</td>
+      <td>[2.1058, 3.138, 2.5437000000000003, 1.0932, 0....</td>
+      <td>[4.7366, 4.6243, 1.2068, 1.1538, 0.0, 0.0, 0.7...</td>
+      <td>[2.2052, 1.7947000000000002, 0.7457, 3.1233, 0...</td>
+      <td>[0.0, 5.1198, -0.3551, -0.3518, 0.0, 0.0, 0.0,...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>sequence</th>
+      <th>structure</th>
+      <th>predicted_loop_type</th>
+      <th>seq_length</th>
+      <th>seq_scored</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>id_00073f8be</td>
+      <td>GGAAAAGUACGACUUGAGUACGGAAAACGUACCAACUCGAUUAAAA...</td>
+      <td>......((((((((((.(((((.....))))))))((((((((......</td>
+      <td>EEEEEESSSSSSSSSSBSSSSSHHHHHSSSSSSSSSSSSSSSSHHH...</td>
+      <td>107</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>id_000ae4237</td>
+      <td>GGAAACGGGUUCCGCGGAUUGCUGCUAAUAAGAGUAAUCUCUAAAU...</td>
+      <td>.....((((..((((((...(((((.....((((....)))).......</td>
+      <td>EEEEESSSSIISSSSSSIIISSSSSIIIIISSSSHHHHSSSSIIII...</td>
+      <td>130</td>
+      <td>91</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>id_00131c573</td>
+      <td>GGAAAACAAAACGGCCUGGAAGACGAAGGAAUUCGGCGCGAAGGCC...</td>
+      <td>...........((.(((.(.(..((..((..((((...))))..))...</td>
+      <td>EEEEEEEEEEESSISSSISISIISSIISSIISSSSHHHSSSSIISS...</td>
+      <td>107</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>id_00181fd34</td>
+      <td>GGAAAGGAUCUCUAUCGAAGGAUAGAGAUCGCUCGCGACGGCACGA...</td>
+      <td>......((((((((((....))))))))))((((((..((.(((.....</td>
+      <td>EEEEEESSSSSSSSSSHHHHSSSSSSSSSSSSSSSSIISSISSSHH...</td>
+      <td>107</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>id_0020473f7</td>
+      <td>GGAAACCCGCCCGCGCCCGCCCGCGCUGCUGCCGUGCCUCCUCUCC...</td>
+      <td>.....(((((((((((((((((((((((((((((((((((((((((...</td>
+      <td>EEEEESSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS...</td>
+      <td>130</td>
+      <td>91</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="how-the-test-data-was-produced">
+<h3>How the test data was produced?<a class="headerlink" href="#how-the-test-data-was-produced" title="Permalink to this headline">¶</a></h3>
+<p>Public test has <strong>629</strong> samples. This <strong>629</strong> samples were choosen from base data of <strong>3029</strong> in a way that it satisfies below 3 conditions:</p>
+<ol class="simple">
+<li><p>Minimum value across all 5 conditions must be greater than -0.5.</p></li>
+<li><p>Mean signal/noise across all 5 conditions must be greater than 1.0. [Signal/noise is defined as mean( measurement value over 68 nts )/mean( statistical error in measurement value over 68 nts)]</p></li>
+<li><p>To help ensure sequence diversity, the resulting sequences were clustered into clusters with less than 50% sequence similarity, and the 629 test set sequences were chosen from clusters with 3 or fewer members. That is, any sequence in the test set should be sequence similar to at most 2 other sequences.</p></li>
+</ol>
+<hr class="docutils" />
+<p>It was filtered based on three criteria detailed above to ensure that this subset is not dominated by any large cluster of RNA molecules with poor data, which might bias the public leaderboard. The remaining <strong>2400 sequences</strong> for which we have data are in <strong>train.json</strong>.</p>
+<p>Note that these filters have not been applied to the 2400 RNAs in the public training data train.json — some of those measurements have negative values or poor signal-to-noise, or some RNA sequences have near-identical sequences in that set. But we are providing all those data in case competitors can squeeze out more signal.</p>
+<p>The three filters noted above will also <strong>not be applied to Private Test on 3005 sequences.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;id&#39;, &#39;sequence&#39;, &#39;structure&#39;, &#39;predicted_loop_type&#39;, &#39;signal_to_noise&#39;,
+       &#39;SN_filter&#39;, &#39;seq_length&#39;, &#39;seq_scored&#39;, &#39;reactivity_error&#39;,
+       &#39;deg_error_Mg_pH10&#39;, &#39;deg_error_pH10&#39;, &#39;deg_error_Mg_50C&#39;,
+       &#39;deg_error_50C&#39;, &#39;reactivity&#39;, &#39;deg_Mg_pH10&#39;, &#39;deg_pH10&#39;, &#39;deg_Mg_50C&#39;,
+       &#39;deg_50C&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>What are these signal_to_noise &amp; SN_filter columns?</strong></p>
+<ul class="simple">
+<li><p><strong>signal_to_noise</strong> is defined as <strong>mean( measurement value over 68 nts )/mean( statistical error in measurement value over 68 nts)</strong></p></li>
+<li><p><strong>SN_filter</strong> is <strong>1</strong> is it satisfy the below given conditions or else it is <strong>0</strong></p>
+<ol class="simple">
+<li><p>Minimum value across all 5 conditions must be greater than -0.5.</p></li>
+<li><p>Mean signal/noise across all 5 conditions must be greater than 1.0.</p></li>
+</ol>
+</li>
+</ul>
+<p>Here, 5 conditions are the <strong>ground-truth</strong> values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="n">train</span><span class="p">[</span><span class="s1">&#39;signal_to_noise&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kde</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Signal/Noise&#39;</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">train</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;SN_filter&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;SN_filter&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/openvaccine-interesting-visualizations_16_0.png" src="../_images/openvaccine-interesting-visualizations_16_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">train</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;signal_to_noise&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/openvaccine-interesting-visualizations_17_0.png" src="../_images/openvaccine-interesting-visualizations_17_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>We also have <strong>negative</strong> values of signal/noise</p></li>
+<li><p>We can also see samples with <strong>very high</strong> signal/noise values <em>(could be Potential Outliers)</em></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of samples with -ev signal/noise values: &quot;</span><span class="p">,</span><span class="n">train</span><span class="p">[</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;signal_to_noise&#39;</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">Q1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;signal_to_noise&#39;</span><span class="p">],</span><span class="n">q</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">Q3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;signal_to_noise&#39;</span><span class="p">],</span><span class="n">q</span><span class="o">=</span><span class="mi">75</span><span class="p">)</span>
+<span class="n">IQR</span> <span class="o">=</span> <span class="n">Q3</span> <span class="o">-</span> <span class="n">Q1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of samples with too high signal/noise values&quot;</span><span class="p">,</span> <span class="n">train</span><span class="p">[</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;signal_to_noise&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="n">Q3</span><span class="o">+</span><span class="mf">1.5</span><span class="o">*</span><span class="n">IQR</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of samples with -ev signal/noise values:  8
+Number of samples with too high signal/noise values 27
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train</span><span class="o">.</span><span class="n">seq_length</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>107    2400
+Name: seq_length, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>All the samples in the train data are of <strong>107</strong> sequence length</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test</span><span class="o">.</span><span class="n">seq_length</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>130    3005
+107     629
+Name: seq_length, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Test data has both <strong>107</strong> &amp; <strong>130</strong> sequence length samples</p></li>
+</ul>
+</div>
+<div class="section" id="targets-averaged-over-positions">
+<h3>Targets Averaged over Positions<a class="headerlink" href="#targets-averaged-over-positions" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">avg_reactivity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span><span class="n">train</span><span class="o">.</span><span class="n">reactivity</span><span class="p">)))</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">avg_deg_50C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span><span class="n">train</span><span class="o">.</span><span class="n">deg_50C</span><span class="p">)))</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">avg_deg_pH10</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span><span class="n">train</span><span class="o">.</span><span class="n">deg_pH10</span><span class="p">)))</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">avg_deg_Mg_50C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span><span class="n">train</span><span class="o">.</span><span class="n">deg_Mg_50C</span><span class="p">)))</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">avg_deg_Mg_pH10</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span><span class="n">train</span><span class="o">.</span><span class="n">deg_Mg_pH10</span><span class="p">)))</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># Distribution of Reactivity Averaged over position</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">avg_reactivity</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Distribution of Reactivity Averaged over position&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="c1"># Distribution of deg_50C Averaged over position</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">avg_deg_50C</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Distribution of deg_50C Averaged over position&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="c1"># Distribution of deg_pH10 Averaged over position</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">avg_deg_pH10</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Distribution of deg_pH10 Averaged over position&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/openvaccine-interesting-visualizations_26_0.png" src="../_images/openvaccine-interesting-visualizations_26_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">68</span><span class="p">),</span><span class="n">y</span><span class="o">=</span><span class="n">avg_reactivity</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;reactivity&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">68</span><span class="p">),</span><span class="n">y</span><span class="o">=</span><span class="n">avg_deg_50C</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;deg_50C&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">68</span><span class="p">),</span><span class="n">y</span><span class="o">=</span><span class="n">avg_deg_pH10</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;deg_ph10&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Positions&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Values&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Average Target Values (w/o Mg) V/S Positions&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/openvaccine-interesting-visualizations_27_0.png" src="../_images/openvaccine-interesting-visualizations_27_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>We can see high values of <strong>Degradation &amp; Reactivity</strong> at the beginning of the sequence</p></li>
+<li><p>There is high degradation because of <strong>pH10</strong> at the beginning but no such pattern for rest of the positions.</p></li>
+<li><p>We can see some correlation between <strong>deg_50C &amp; deg_pH10</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">avg_deg_50C</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">avg_deg_pH10</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Average deg_50C V/S deg_pH10&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;deg_50C&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;deg_pH10&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/openvaccine-interesting-visualizations_29_0.png" src="../_images/openvaccine-interesting-visualizations_29_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correlation Coeff between avg_deg_50C &amp; avg_deg_pH10: &quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">avg_deg_50C</span><span class="p">,</span><span class="n">avg_deg_pH10</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Correlation Coeff between avg_deg_50C &amp; avg_deg_pH10:  0.8841301466799286
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># Distribution of deg_50C Averaged over position</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">avg_deg_Mg_50C</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Distribution of deg_Mg_50C Averaged over position&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+
+<span class="c1"># Distribution of deg_pH10 Averaged over position</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">avg_deg_Mg_pH10</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Distribution of deg_Mg_pH10 Averaged over position&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/openvaccine-interesting-visualizations_31_0.png" src="../_images/openvaccine-interesting-visualizations_31_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">68</span><span class="p">),</span><span class="n">y</span><span class="o">=</span><span class="n">avg_deg_Mg_50C</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;deg_Mg_50C&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">68</span><span class="p">),</span><span class="n">y</span><span class="o">=</span><span class="n">avg_deg_Mg_pH10</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;deg_Mg_pH10&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Positions&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Values&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Average Target Values (w Mg) V/S Positions&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/openvaccine-interesting-visualizations_32_0.png" src="../_images/openvaccine-interesting-visualizations_32_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Most of the time <strong>deg_Mg_pH10</strong> is more than <strong>deg_Mg_50C</strong></p></li>
+<li><p>And we can see some <strong>correlation</strong> between them</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correlation Coeff between avg_deg_Mg_50C &amp; avg_deg_Mg_pH10: &quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">avg_deg_Mg_50C</span><span class="p">,</span><span class="n">avg_deg_Mg_pH10</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Correlation Coeff between avg_deg_Mg_50C &amp; avg_deg_Mg_pH10:  0.9651712822435524
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>deg_Mg_50C &amp; deg_Mg_pH10</strong> are highly correlated</p></li>
+</ul>
+</div>
+<div class="section" id="distribution-of-target-at-a-random-position">
+<h3>Distribution of Target at a Random Position<a class="headerlink" href="#distribution-of-target-at-a-random-position" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="mi">68</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># Distribution of Reactivity at Random position</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span><span class="n">train</span><span class="o">.</span><span class="n">reactivity</span><span class="p">)))[:,</span><span class="n">pos</span><span class="p">],</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Distribution of Reactivity at position-</span><span class="si">{pos}</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="c1"># Distribution of deg_50C at Random position</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span><span class="n">train</span><span class="o">.</span><span class="n">deg_50C</span><span class="p">)))[:,</span><span class="n">pos</span><span class="p">],</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Distribution of deg_50C at position-</span><span class="si">{pos}</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="c1"># Distribution of deg_pH10 at Random position</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span><span class="n">train</span><span class="o">.</span><span class="n">deg_pH10</span><span class="p">)))[:,</span><span class="n">pos</span><span class="p">],</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Distribution of deg_pH10 at position-</span><span class="si">{pos}</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/openvaccine-interesting-visualizations_37_0.png" src="../_images/openvaccine-interesting-visualizations_37_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># Distribution of deg_50C at Random position</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span><span class="n">train</span><span class="o">.</span><span class="n">deg_Mg_50C</span><span class="p">)))[:,</span><span class="n">pos</span><span class="p">],</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Distribution of deg_Mg_50C at position-</span><span class="si">{pos}</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+
+<span class="c1"># Distribution of deg_pH10 at Random position</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span><span class="n">train</span><span class="o">.</span><span class="n">deg_Mg_pH10</span><span class="p">)))[:,</span><span class="n">pos</span><span class="p">],</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Distribution of deg_Mg_pH10 at position-</span><span class="si">{pos}</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/openvaccine-interesting-visualizations_38_0.png" src="../_images/openvaccine-interesting-visualizations_38_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="errors-in-calculation-averaged-over-positions">
+<h3>Errors in Calculation (Averaged over positions)<a class="headerlink" href="#errors-in-calculation-averaged-over-positions" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;reactivity_error&#39;</span><span class="p">,</span><span class="s1">&#39;deg_error_Mg_pH10&#39;</span><span class="p">,</span> <span class="s1">&#39;deg_error_pH10&#39;</span><span class="p">,</span> <span class="s1">&#39;deg_error_Mg_50C&#39;</span><span class="p">,</span><span class="s1">&#39;deg_error_50C&#39;</span><span class="p">]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span><span class="n">train</span><span class="p">[</span><span class="n">col</span><span class="p">])))</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">y</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Error values&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Average Errors in Calculation of Targets&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/openvaccine-interesting-visualizations_40_0.png" src="../_images/openvaccine-interesting-visualizations_40_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Very high values of Errors in <strong>deg_error_pH10 &amp; deg_error_50C</strong> but maybe we should not worry about these targets because evaluation is not based on these targets</p></li>
+<li><p>Maybe this could be a reason why our models will not be scored on these two targets</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)):</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">68</span><span class="p">),</span><span class="n">y</span><span class="o">=</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Positions&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Error&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Error V/S Position&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/openvaccine-interesting-visualizations_42_0.png" src="../_images/openvaccine-interesting-visualizations_42_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>We can see an <strong>interesting pattern</strong> here. We have high values of <strong>errors</strong> between postions <strong>0 and 4</strong>, but then it starts <strong>decreasing constantly</strong> as we go ahead</p></li>
+<li><p>Now let’s analyse if all samples are contributing to these high values or there are only few smaples which are driving these values</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="mi">68</span><span class="p">)</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;reactivity_error&#39;</span><span class="p">,</span><span class="s1">&#39;deg_error_Mg_pH10&#39;</span><span class="p">,</span> <span class="s1">&#39;deg_error_pH10&#39;</span><span class="p">,</span> <span class="s1">&#39;deg_error_Mg_50C&#39;</span><span class="p">,</span><span class="s1">&#39;deg_error_50C&#39;</span><span class="p">]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span><span class="n">train</span><span class="p">[</span><span class="n">col</span><span class="p">])))[:,</span><span class="n">pos</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">y</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Error Distribution at position - </span><span class="si">{pos}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Error&#39;</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/openvaccine-interesting-visualizations_44_0.png" src="../_images/openvaccine-interesting-visualizations_44_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>We can see there are few samples which are having high values of errors</p></li>
+<li><p>Now let’s try to filter these samples</p></li>
+<li><p>We can try using <strong>SN_filter</strong> for this</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;reactivity_error&#39;</span><span class="p">,</span><span class="s1">&#39;deg_error_Mg_pH10&#39;</span><span class="p">,</span> <span class="s1">&#39;deg_error_pH10&#39;</span><span class="p">,</span> <span class="s1">&#39;deg_error_Mg_50C&#39;</span><span class="p">,</span><span class="s1">&#39;deg_error_50C&#39;</span><span class="p">]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span><span class="n">train</span><span class="p">[</span><span class="n">train</span><span class="o">.</span><span class="n">SN_filter</span><span class="o">==</span><span class="mi">1</span><span class="p">][</span><span class="n">col</span><span class="p">])))[:,</span><span class="n">pos</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">y</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;(Filtered) Error Distribution at position - </span><span class="si">{pos}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Error&#39;</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/openvaccine-interesting-visualizations_46_0.png" src="../_images/openvaccine-interesting-visualizations_46_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Samples with <strong>SN_filter = 1</strong> are having low values of errors</p></li>
+<li><p>We can use this <strong>filter</strong> to train our model only on these samples but as the <strong>private test</strong> data is <strong>not filtered</strong>, it might only give good results on <strong>Public LB</strong> but not on <strong>Private LB</strong></p></li>
+</ul>
+</div>
+<div class="section" id="rna-structure">
+<h3>RNA Structure<a class="headerlink" href="#rna-structure" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip3 install -q forgi<span class="o">[</span>all<span class="o">]</span>
+<span class="o">!</span>conda install -y -c bioconda viennarna
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: You are using pip version 20.2.2; however, version 20.2.3 is available.</span>
+<span class=" -Color -Color-Yellow">You should consider upgrading via the &#39;/opt/conda/bin/python3.7 -m pip install --upgrade pip&#39; command.</span>
+Collecting package metadata (current_repodata.json): - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ done
+Solving environment: / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ done
+
+## Package Plan ##
+
+  environment location: /opt/conda
+
+  added / updated specs:
+    - viennarna
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    conda-4.8.5                |   py37hc8dfbb8_1         3.0 MB  conda-forge
+    openssl-1.1.1h             |       h516909a_0         2.1 MB  conda-forge
+    viennarna-2.4.15           |   py37h13b99d1_0        14.2 MB  bioconda
+    ------------------------------------------------------------
+                                           Total:        19.4 MB
+
+The following NEW packages will be INSTALLED:
+
+  viennarna          bioconda/linux-64::viennarna-2.4.15-py37h13b99d1_0
+
+The following packages will be UPDATED:
+
+  conda                                4.8.4-py37hc8dfbb8_2 --&gt; 4.8.5-py37hc8dfbb8_1
+  openssl                                 1.1.1g-h516909a_1 --&gt; 1.1.1h-h516909a_0
+
+
+
+Downloading and Extracting Packages
+conda-4.8.5          | 3.0 MB    | ##################################### | 100% 
+viennarna-2.4.15     | 14.2 MB   | ##################################### | 100% 
+openssl-1.1.1h       | 2.1 MB    | ##################################### | 100% 
+Preparing transaction: / done
+Verifying transaction: \ | / done
+Executing transaction: \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | done
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">forgi.graph.bulge_graph</span> <span class="k">as</span> <span class="nn">fgb</span>
+<span class="kn">import</span> <span class="nn">forgi.visual.mplotlib</span> <span class="k">as</span> <span class="nn">fvm</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_sample</span><span class="p">(</span><span class="n">sample</span><span class="p">):</span>
+    
+    <span class="sd">&quot;&quot;&quot;Source: https://www.kaggle.com/erelin6613/openvaccine-rna-visualization&quot;&quot;&quot;</span>
+    
+    <span class="n">struct</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;structure&#39;</span><span class="p">]</span>
+    <span class="n">seq</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;sequence&#39;</span><span class="p">]</span>
+    <span class="n">bg</span> <span class="o">=</span> <span class="n">fgb</span><span class="o">.</span><span class="n">BulgeGraph</span><span class="o">.</span><span class="n">from_fasta_text</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;&gt;rna1</span><span class="se">\n</span><span class="si">{struct}</span><span class="se">\n</span><span class="si">{seq}</span><span class="s1">&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+    <span class="n">fvm</span><span class="o">.</span><span class="n">plot_rna</span><span class="p">(</span><span class="n">bg</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;RNA Structure (id: </span><span class="si">{sample.id}</span><span class="s2">)&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])]</span>
+<span class="n">plot_sample</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/openvaccine-interesting-visualizations_52_0.png" src="../_images/openvaccine-interesting-visualizations_52_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Predicted Loop type: &quot;</span><span class="p">,</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;predicted_loop_type&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Predicted Loop type:  EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEESSSSSHHHHHHHHHHHHHSSSSSXXXXXXXXXXXXXSSSSSSSHHHHSSSSSSSEEEEEEEEEEEEEEEEEEEEE
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Here, we can see in image there is a <strong>loop-m1</strong> but for the this same loop, we have different <strong>predicted loop type</strong> in our data -&gt; <strong>loop type - X</strong></p></li>
+<li><p>Why it is like this?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">defaultdict</span>
+
+<span class="n">reactivity</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="p">[])</span>
+<span class="n">deg_Mg_50C</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="p">[])</span>
+<span class="n">deg_Mg_pH10</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="p">[])</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;reactivity&#39;</span><span class="p">])):</span>
+    <span class="n">reactivity</span><span class="p">[</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;structure&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;reactivity&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]))</span>
+    <span class="n">deg_Mg_50C</span><span class="p">[</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;structure&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;deg_Mg_50C&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]))</span>
+    <span class="n">deg_Mg_pH10</span><span class="p">[</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;structure&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s1">&#39;deg_Mg_pH10&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">reactivity</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">reactivity</span><span class="p">[</span><span class="n">key</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="n">key</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Structure wise Distribution of Reactivity of a Random Sample&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/openvaccine-interesting-visualizations_55_0.png" src="../_images/openvaccine-interesting-visualizations_55_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">reactivity</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">deg_Mg_50C</span><span class="p">[</span><span class="n">key</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="n">key</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Structure wise Distribution of deg_Mg_50C of a Random Sample&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/openvaccine-interesting-visualizations_56_0.png" src="../_images/openvaccine-interesting-visualizations_56_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">reactivity</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">deg_Mg_pH10</span><span class="p">[</span><span class="n">key</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="n">key</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Structure wise Distribution of deg_Mg_pH10 of a Random Sample&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/openvaccine-interesting-visualizations_57_0.png" src="../_images/openvaccine-interesting-visualizations_57_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="pair-wise-exploration-of-degradation">
+<h3>Pair wise Exploration of Degradation<a class="headerlink" href="#pair-wise-exploration-of-degradation" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reactivityDict</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="p">[])</span>
+
+<span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+    <span class="n">structure</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;structure&#39;</span><span class="p">]</span>
+    <span class="n">sequence</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;sequence&#39;</span><span class="p">]</span>
+    <span class="n">reactivity</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[</span><span class="s1">&#39;reactivity&#39;</span><span class="p">]</span>
+
+    <span class="n">q</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">s</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">structure</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">reactivity</span><span class="p">)]):</span>
+        <span class="k">if</span> <span class="n">s</span><span class="o">==</span><span class="s1">&#39;.&#39;</span><span class="p">:</span>
+            <span class="n">reactivityDict</span><span class="p">[</span><span class="n">sequence</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reactivity</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">s</span><span class="o">==</span><span class="s1">&#39;(&#39;</span><span class="p">:</span>
+            <span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">s</span><span class="o">==</span><span class="s1">&#39;)&#39;</span><span class="p">:</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">([</span><span class="n">sequence</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">sequence</span><span class="p">[</span><span class="n">j</span><span class="p">]]))</span>
+            <span class="n">reactivityDict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reactivity</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">reactivityDict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">reactivity</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="base-pair-wise-distribution-of-reactivity">
+<h4>Base-Pair wise Distribution of Reactivity<a class="headerlink" href="#base-pair-wise-distribution-of-reactivity" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">reactivityDict</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">reactivityDict</span><span class="o">.</span><span class="n">keys</span><span class="p">())),</span><span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">reactivityDict</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">reactivityDict</span><span class="p">[</span><span class="n">key</span><span class="p">],</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Reactivity&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/openvaccine-interesting-visualizations_61_0.png" src="../_images/openvaccine-interesting-visualizations_61_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Single bases are having bigger range of <strong>Reactivity</strong> than <strong>Paired Bases</strong>.</p></li>
+<li><p>Most of the pairs have distribution around <strong>0</strong></p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./EDA"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="openvaccine-eda.html" title="previous page">EDA by Vatsal</a>
+    <a class='right-next' id="next-link" href="../Things_we_tried/CV_strategy.html" title="next page">Stratification by the signal_to_noise</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Vatsal Parsaniya , Meet Ranoliya<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

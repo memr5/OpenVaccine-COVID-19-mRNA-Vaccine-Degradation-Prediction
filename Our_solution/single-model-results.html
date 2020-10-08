@@ -1,0 +1,784 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meet’s Single Models Details &#8212; 🍀 Co-weed&#39;19</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Ensemble Results" href="ensemblingResults.html" />
+    <link rel="prev" title="Meet’s code" href="openvaccine-transformers-lstm-gru.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo_1.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">🍀 Co-weed'19</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Introduction/Introduction.html">
+   🙋🏻‍♂️ Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  🤔 Project Overview
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Project_Overview/description.html">
+   Description
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Project_Overview/evaluation.html">
+   Evaluation
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  🔍 Exploratory Data Analysis
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../EDA/openvaccine-eda.html">
+   EDA by Vatsal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../EDA/openvaccine-interesting-visualizations.html">
+   EDA by Meet
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  🧪 Things we tried
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Things_we_tried/CV_strategy.html">
+   Stratification by the signal_to_noise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Things_we_tried/openvaccine-feature-extraction.html">
+   Feature extraction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Things_we_tried/augmentation.html">
+   structure augmentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Things_we_tried/openvaccine-t-sne-rapids.html">
+   T-SNE - Rapids
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  💡 Our Solution
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="openvaccine-model-training-augmentation.html">
+   Vatsal’s Code
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Single_model_Perfomance.html">
+   Vatsal’s Single Model Details
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="openvaccine-transformers-lstm-gru.html">
+   Meet’s code
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Meet’s Single Models Details
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ensemblingResults.html">
+   Ensemble Results
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  📝 Reference Material
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Reference_material/index.html">
+   Material
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  🗣 Discussion Forum Material
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Discussion_material/tsne_visualization.html">
+   TSNE visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Discussion_material/Graph_representation_of_RNA.html">
+   Graph representation of RNA
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Our_solution/single-model-results.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#machine-learning-models">
+   Machine Learning Models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deep-learning-models">
+   Deep Learning Models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#non-filtered-data">
+     Non-Filtered Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stratified-on-snr-by-vp">
+     Stratified on SNR by VP
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filtered-data-sn-filter-1">
+     Filtered Data (SN_filter=1)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filtered-data-s-n-1">
+     Filtered Data (S/N&gt;1)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#augmented-data">
+     Augmented Data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="meet-s-single-models-details">
+<h1>Meet’s Single Models Details<a class="headerlink" href="#meet-s-single-models-details" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="machine-learning-models">
+<h2>Machine Learning Models<a class="headerlink" href="#machine-learning-models" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>Local CV</p></th>
+<th class="head"><p>Public LB</p></th>
+<th class="head"><p>Model Details</p></th>
+<th class="head"><p>Notebook Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>XGB</p></td>
+<td><p>0.6597183288077114</p></td>
+<td><p></p></td>
+<td><p>max_depth=7, SEED=2020</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-xgb-baseline">V10</a></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="deep-learning-models">
+<h2>Deep Learning Models<a class="headerlink" href="#deep-learning-models" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="non-filtered-data">
+<h3>Non-Filtered Data<a class="headerlink" href="#non-filtered-data" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>Local CV</p></th>
+<th class="head"><p>Public LB</p></th>
+<th class="head"><p>Model Details</p></th>
+<th class="head"><p>Notebook Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Baseline GRU</p></td>
+<td><p>0.38721315264701844</p></td>
+<td><p>0.26277</p></td>
+<td><p>3 Layers of GRU</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=42884202">V5</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Baseline LSTM</p></td>
+<td><p>0.388712215423584</p></td>
+<td><p>0.26521</p></td>
+<td><p>3 layers of LSTM</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=42893042">V6</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Multiple Parallel Layers of GRU &amp; LSTM</p></td>
+<td><p>0.3875190675258636</p></td>
+<td><p>0.26319</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=42899216">V7</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Baseline GRU</p></td>
+<td><p>0.38780994415283204</p></td>
+<td><p>0.26322</p></td>
+<td><p>New Features: (Next &amp; Previous Loop Type)</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=42926090">V9</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Baseline GRU</p></td>
+<td><p>0.38553609848022463</p></td>
+<td><p>0.26116</p></td>
+<td><p>New Feature: PairedWith</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=42932011">V11</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Baseline GRU</p></td>
+<td><p>0.3856616675853729</p></td>
+<td><p></p></td>
+<td><p>Next &amp; Prev Looptypes + PairedWith</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=42937474">V12</a></p></td>
+</tr>
+<tr class="row-even"><td><p>GRU Baseline</p></td>
+<td><p>0.38482035994529723</p></td>
+<td><p>0.26028</p></td>
+<td><p>PairedWith + BPPs</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=42948924">V13</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>GRU Baseline</p></td>
+<td><p>0.38480286598205565</p></td>
+<td><p>0.25870</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=42965894">V15</a></p></td>
+</tr>
+<tr class="row-even"><td><p>GRU Baseline</p></td>
+<td><p>0.3846119999885559</p></td>
+<td><p>0.25833</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=42966642">V16</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>GRU Baseline</p></td>
+<td><p>0.3842911720275879</p></td>
+<td><p>0.25717</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=42969547">V18</a></p></td>
+</tr>
+<tr class="row-even"><td><p>GRU Baseline</p></td>
+<td><p>0.3844085097312927</p></td>
+<td><p>0.25777</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPPNeighbour</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=42987299">V19</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>GRU Baseline</p></td>
+<td><p>0.3842735648155212</p></td>
+<td><p>0.25783</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Prev Neighbour</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=42988310">V20</a></p></td>
+</tr>
+<tr class="row-even"><td><p>GRU Baseline</p></td>
+<td><p>0.3842824578285217</p></td>
+<td><p>0.25668</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Next Neighbour</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=42990156">V21</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>GRU(128,256,128)</p></td>
+<td><p>0.38359965682029723</p></td>
+<td><p>0.25891</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Next Neighbour</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=42994498">V22</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Multiple Parallel Layers of GRU &amp; LSTM</p></td>
+<td><p>0.38335418701171875</p></td>
+<td><p>0.25838</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Next Neighbour</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=42999548">V23</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>GRU 4Layers</p></td>
+<td><p>0.38397958874702454</p></td>
+<td><p></p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43008485">V24</a></p></td>
+</tr>
+<tr class="row-even"><td><p>GRU 4Layers</p></td>
+<td><p>0.38374610543251036</p></td>
+<td><p>0.25844</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + CyclicStep=480</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43020893">V27</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>GRU Baseline</p></td>
+<td><p>0.3842721700668335</p></td>
+<td><p>0.25683</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Next Neighbour + Cyclic Step = 480</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43047603">V28</a></p></td>
+</tr>
+<tr class="row-even"><td><p>GRU Baseline</p></td>
+<td><p>0.38421331644058226</p></td>
+<td><p>0.25798</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Prev Neighbour + Cyclic Step = 480</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43051746">V29</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>GRU Baseline</p></td>
+<td><p>0.3836737036705017 &amp; 0.6350993723670347</p></td>
+<td><p>0.25779</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Prev Neighbour + BS16</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43136848">V33</a></p></td>
+</tr>
+<tr class="row-even"><td><p>GRU Baseline</p></td>
+<td><p>0.3837740898132324 &amp; 0.6328339077104493</p></td>
+<td><p>0.25720</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Next Neighbour + BS16</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43140011">V34</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>GRU Baseline + Conv1D-f512-k3</p></td>
+<td><p>0.384368896484375 &amp; 0.6302125597507442</p></td>
+<td><p>0.25546</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Next Neighbour</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43146873">V35</a></p></td>
+</tr>
+<tr class="row-even"><td><p>GRU 2Layers + Conv1D-f512-k3</p></td>
+<td><p>0.3842433154582977 &amp; 0.6301798019513162</p></td>
+<td><p>0.25493</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Next Neighbour</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43158018">V39</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>GRU 2Layers + Conv1D-f256-k3</p></td>
+<td><p>0.3842428088188171 &amp; 0.6290311732639092</p></td>
+<td><p>0.25424</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Next Neighbour</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43166075">V44</a></p></td>
+</tr>
+<tr class="row-even"><td><p>GRU 2Layers-128 + 2Conv1D-f256-k3</p></td>
+<td><p>0.3841682970523834 &amp; 0.6286693614429112</p></td>
+<td><p>0.25602</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Next Neighbour</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43182145">V45</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>1Conv1D + 2GRUs II 2LSTMs</p></td>
+<td><p>0.3830654799938202 &amp; 0.633038090400702 &amp; 0.22481536017799397</p></td>
+<td><p>0.25434</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Next Neighbour</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43213601">V49</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Conv1D-f256-k3 + GRU 2Layers</p></td>
+<td><p>0.3833383321762085 &amp; 0.6295408501741827 &amp; 0.22624839658981108</p></td>
+<td><p>0.25416</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Next Neighbour + BPP_nonzero</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43333635">V59</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Conv1D-f256-k3 + GRU 2Layers</p></td>
+<td><p>0.38341211080551146 &amp; 0.6304454968436511 &amp; 0.22621962433013812</p></td>
+<td><p>0.25432</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Prev Neighbour + BPP_nonzero</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43336233">V60</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Conv1D-f256-k3 + GRU 2Layers</p></td>
+<td><p>0.21057788729667665 &amp; 0.22951935575596547</p></td>
+<td><p>0.25584</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Next Neighbour + BPP_nonzero + Val on SN_filter==1 + Sample_Weights</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43346922">V61</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Conv1D-f256-k3 + GRU 2Layers</p></td>
+<td><p>0.20744287371635436 &amp; 0.22625985339822316</p></td>
+<td><p>0.25393</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Next Neighbour + BPP_nonzero + Val on SN_filter==1</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43399062">V62</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Transformer + 2GRUs-256</p></td>
+<td><p>0.2097667932510376 &amp; 0.23226156655397193</p></td>
+<td><p>0.25835</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Next Neighbour + BPP_nonzero + Val on SN_filter==1</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43491219">V70</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>3GRU-64-128-64 + Tx(dm-128,nh-4,dff-256)</p></td>
+<td><p>0.2114489942789078 &amp; 0.2310936371286593</p></td>
+<td><p>0.25460</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Next Neighbour + BPP_nonzero + Val on SN_filter==1</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43534014">V77</a></p></td>
+</tr>
+<tr class="row-even"><td><p>3GRU-64-128-64 + Tx(dm-128,nh-4,dff-256) W/O POS-E</p></td>
+<td><p>0.2098795711994171 &amp; 0.2303216445241878</p></td>
+<td><p></p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Next Neighbour + BPP_nonzero + Val on SN_filter==1</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43591459">V83</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>GRU-LSTM+GRU + Tx(dm-128,nh-4,dff-256) W/O POS-E</p></td>
+<td><p>0.2088579624891281 &amp; 0.22903614648464873</p></td>
+<td><p></p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Next Neighbour + BPP_nonzero + Val on SN_filter==1</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43595128">V85</a></p></td>
+</tr>
+<tr class="row-even"><td><p>CONV + GRU + SkipCONV + 2GRU</p></td>
+<td><p>0.20656450390815734 &amp; 0.22462537882539144</p></td>
+<td><p>0.25495</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Next Neighbour + BPP_nonzero + Val on SN_filter==1 + AbsDist between BasePair</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43614628">V89</a></p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+</div>
+<hr class="docutils" />
+<div class="section" id="stratified-on-snr-by-vp">
+<h3>Stratified on SNR by VP<a class="headerlink" href="#stratified-on-snr-by-vp" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>Local CV</p></th>
+<th class="head"><p>Public LB</p></th>
+<th class="head"><p>Model Details</p></th>
+<th class="head"><p>Notebook Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CONV + GRU + SkipCONV + 2GRU</p></td>
+<td><p>0.2065820127725601 &amp; 0.22554289782860892</p></td>
+<td><p>0.25373</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Next Neighbour + BPP_nonzero + Val on SN_filter==1 + AbsDist between BasePair</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43688193">V97</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>CONV on OHE + CONV + GRU + SkipCONV + 2GRU</p></td>
+<td><p>0.2065655320882797 &amp; 0.22521942463222686 &amp; 0.22521942463222686</p></td>
+<td><p></p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Next Neighbour + BPP_nonzero + Val on SN_filter==1 + AbsDist between BasePair + OneHotEncoding</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-transformers-lstm-gru?scriptVersionId=43948406">V111</a></p></td>
+</tr>
+<tr class="row-even"><td><p>4CONV on OHE + CONV + GRU + SkipCONV + 2GRU</p></td>
+<td><p>0.20477611422538758 &amp; 0.2252564277098983 &amp; 0.2252564277098983</p></td>
+<td><p></p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Next Neighbour + BPP_nonzero + Val on SN_filter==1 + AbsDist between BasePair + OneHotEncoding</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-transformers-lstm-gru?scriptVersionId=43948912">V113</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Conv512-3 on OHE + CONV + GRU + SkipCONV + 2GRU</p></td>
+<td><p>0.2075606942176819 &amp; 0.22573986884052452</p></td>
+<td><p></p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Next Neighbour + BPP_nonzero + Val on SN_filter==1 + AbsDist between BasePair + OneHotEncoding</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-transformers-lstm-gru?scriptVersionId=43994018">V119</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Conv128-3 on OHE + CONV + GRU + SkipCONV + 2GRU</p></td>
+<td><p>0.20688875019550323 &amp; 0.22619811460821349</p></td>
+<td><p></p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Next Neighbour + BPP_nonzero + Val on SN_filter==1 + AbsDist between BasePair + OneHotEncoding</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-transformers-lstm-gru?scriptVersionId=43995351">V120</a></p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+</div>
+<hr class="docutils" />
+<div class="section" id="filtered-data-sn-filter-1">
+<h3>Filtered Data (SN_filter=1)<a class="headerlink" href="#filtered-data-sn-filter-1" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>Local CV</p></th>
+<th class="head"><p>Public LB</p></th>
+<th class="head"><p>Model Details</p></th>
+<th class="head"><p>Notebook Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>GRU Baseline</p></td>
+<td><p>Mean: 0.20845058858394622 RMSE on Scored Columns: 0.22797030496477858</p></td>
+<td><p>0.26104</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Prev Neighbour + Cyclic Step = 480</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43063950">V30</a></p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+</div>
+<hr class="docutils" />
+<div class="section" id="filtered-data-s-n-1">
+<h3>Filtered Data (S/N&gt;1)<a class="headerlink" href="#filtered-data-s-n-1" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>Local CV</p></th>
+<th class="head"><p>Public LB</p></th>
+<th class="head"><p>Model Details</p></th>
+<th class="head"><p>Notebook Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>GRU Baseline</p></td>
+<td><p>Mean: 0.21612378656864167 RMSE on Scored Columns: 0.23221140046762712</p></td>
+<td><p>0.25755</p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Prev Neighbour + Cyclic Step = 480</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-lstm-gru?scriptVersionId=43064986">V32</a></p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+</div>
+<hr class="docutils" />
+<div class="section" id="augmented-data">
+<h3>Augmented Data<a class="headerlink" href="#augmented-data" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>Local CV</p></th>
+<th class="head"><p>Public LB</p></th>
+<th class="head"><p>Model Details</p></th>
+<th class="head"><p>Notebook Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CONV + GRU + SkipCONV + 2GRU</p></td>
+<td><p>0.20700212121009826 &amp; 0.22679129649648233</p></td>
+<td><p></p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Next Neighbour + BPP_nonzero + Val on SN_filter==1 + AbsDist between BasePair + Stratified on SNR + Grouped by ids</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/openvaccine-transformers-lstm-gru?scriptVersionId=44073844">V126</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>CONV + GRU + SkipCONV + LSTM+GRU</p></td>
+<td><p>0.2050697386264801 &amp; 0.22628858296710197</p></td>
+<td><p></p></td>
+<td><p>PairedWith + BPPs + BPPMaxs + BPPMeans + BPPSums + BPP of Next Neighbour + BPP_nonzero + Val on SN_filter==1 + AbsDist between BasePair + Stratified on SNR + Grouped by ids</p></td>
+<td><p><a class="reference external" href="https://www.kaggle.com/meemr5/fork-of-openvaccine-transformers-lstm-gru?scriptVersionId=44079856">Forked-V1</a></p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<hr class="docutils" />
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Our_solution"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="openvaccine-transformers-lstm-gru.html" title="previous page">Meet’s code</a>
+    <a class='right-next' id="next-link" href="ensemblingResults.html" title="next page">Ensemble Results</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Vatsal Parsaniya , Meet Ranoliya<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
