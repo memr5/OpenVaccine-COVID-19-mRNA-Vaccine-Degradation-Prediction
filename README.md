@@ -1,11 +1,6 @@
-# OpenVaccine-COVID-19-mRNA-Vaccine-Degradation-Prediction
+# 🧬 OpenVaccine-COVID-19-mRNA-Vaccine-Degradation-Prediction
 
-```{figure} Images/competition.png
----
-name: https://www.kaggle.com/c/stanford-covid-vaccine/overview
----
-https://www.kaggle.com/c/stanford-covid-vaccine/overview
-```
+![Banner](doc/Project_Overview/Images/competition.png)
 
 Winning the fight against the COVID-19 pandemic will require an effective vaccine that can be equitably and widely distributed. Building upon decades of research has allowed scientists to accelerate the search for a vaccine against COVID-19, but every day that goes by without a vaccine has enormous costs for the world nonetheless. We need new, fresh ideas from all corners of the world. Could online gaming and crowdsourcing help solve a worldwide pandemic? Pairing scientific and crowdsourced intelligence could help computational biochemists make measurable progress.
 
@@ -13,12 +8,7 @@ mRNA vaccines have taken the lead as the fastest vaccine candidates for COVID-19
 
 Researchers have observed that RNA molecules have the tendency to spontaneously degrade. This is a serious limitation--a single cut can render the mRNA vaccine useless. Currently, little is known on the details of where in the backbone of a given RNA is most prone to being affected. Without this knowledge, current mRNA vaccines against COVID-19 must be prepared and shipped under intense refrigeration, and are unlikely to reach more than a tiny fraction of human beings on the planet unless they can be stabilized.
 
-```{figure} Images/discription1.png
----
-name: mRNA molecule
----
-mRNA molecule
-```
+![mRNA molecule](doc/Project_Overview/Images/discription1.png)
 
 The Eterna community, led by Professor Rhiju Das, a computational biochemist at Stanford’s School of Medicine, brings together scientists and gamers to solve puzzles and invent medicine. Eterna is an online video game platform that challenges players to solve scientific problems such as mRNA design through puzzles. The solutions are synthesized and experimentally tested at Stanford by researchers to gain new insights about RNA molecules. The Eterna community has previously unlocked new scientific principles, made new diagnostics against deadly diseases, and engaged the world’s most potent intellectual resources for the betterment of the public. The Eterna community has advanced biotechnology through its contribution in over 20 publications, including advances in RNA biotechnology.
 
@@ -26,17 +16,16 @@ In this competition, we are looking to leverage the data science expertise of th
 
 Improving the stability of mRNA vaccines was a problem that was being explored before the pandemic but was expected to take many years to solve. Now, we must solve this deep scientific challenge in months, if not weeks, to accelerate mRNA vaccine research and deliver a refrigerator-stable vaccine against SARS-CoV-2, the virus behind COVID-19. The problem we are trying to solve has eluded academic labs, industry R&D groups, and supercomputers, and so we are turning to you. To help, you can join the team of video game players, scientists, and developers at Eterna to unlock the key in our fight against this devastating pandemic.
 
-```{figure} Images/discription2.png
----
-name: Eterna community, Das Lab
----
-Eterna community, Das Lab
-```
+![Eterna Community, Das Lab](doc/Project_Overview/Images/discription2.png)
 
 ---
 ---
 
-## Contributors
+## 🚀 Project Site
+
+We have documented the work related to this challenge - [here](https://memr5.github.io/OpenVaccine-COVID-19-mRNA-Vaccine-Degradation-Prediction/)
+
+## 👨🏻‍💻 Contributors
 
 * [Vatsal Parsaniya](https://www.kaggle.com/vatsalparsaniya)
 * [Meet Ranoliya](https://www.kaggle.com/meemr5/)
