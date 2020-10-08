@@ -8,10 +8,14 @@
 - part : Things we tried
   chapters:
       - file: Things_we_tried/CV_strategy.md 
+      - file: Things_we_tried/openvaccine-feature-extraction.ipynb 
+      - file: Things_we_tried/augmentation.md
+      - file: Things_we_tried/openvaccine-t-sne-rapids.ipynb
 
 - part : Our Solution
   chapters:
-      - file: Our_solution/index.md 
+      - file: Our_solution/Single_model_Perfomance.md
+      - file: Our_solution/openvaccine-model-training-augmentation.ipynb
 
 - part : Reference Material
   chapters:
@@ -20,3 +24,4 @@
 - part : Discussion Forum Material
   chapters:
       - file: Discussion_material/tsne_visualization.md 
+      - file: Discussion_material/Graph_representation_of_RNA.md

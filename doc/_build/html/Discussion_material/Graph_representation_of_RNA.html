@@ -1,0 +1,398 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graph representation of RNA &#8212; 🍀 Co-weed&#39;19</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.bfb7730f9caf2ec0b46a44615585038c.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.30270b6e4c972e43c488.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="TSNE visualization" href="tsne_visualization.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo_1.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">🍀 Co-weed'19</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Introduction/Introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Project Overview
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Project_Overview/description.html">
+   Description
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Project_Overview/evaluation.html">
+   Evaluation
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Things we tried
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Things_we_tried/CV_strategy.html">
+   Stratification by the signal_to_noise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Things_we_tried/openvaccine-feature-extraction.html">
+   Feature extraction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Things_we_tried/augmentation.html">
+   structure augmentation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Things_we_tried/openvaccine-t-sne-rapids.html">
+   T-SNE - Rapids
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Our Solution
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Our_solution/Single_model_Perfomance.html">
+   Single Model Perfomance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Our_solution/openvaccine-model-training-augmentation.html">
+   Vatsal’s Code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reference Material
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Reference_material/index.html">
+   Great_Material
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Discussion Forum Material
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tsne_visualization.html">
+   TSNE visualization
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Graph representation of RNA
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Discussion_material/Graph_representation_of_RNA.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-my-notebook-openvaccine-eda">
+   Check My Notebook : 💉OpenVaccine: EDA
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="graph-representation-of-rna">
+<h1>Graph representation of RNA<a class="headerlink" href="#graph-representation-of-rna" title="Permalink to this headline">¶</a></h1>
+<p>In <strong>2D-Visualization</strong> it is difficult to understand, which section is Represent <strong>stem</strong>, <strong>threeprime</strong>, <strong>fiveprime</strong>, etc. To make it easier, we can generate a <strong>Graph Structure</strong> of RNA. The neato method can take that as input and create a nice visualization of the graph:</p>
+<hr class="docutils" />
+<p><strong>ID</strong> : id_001f94081
+<strong>Sequence</strong> : GGAAAAGCUCUAAUAACAGGAGACUAGGACUACGUAUUUCUAGGUAACUGGAAUAACCCAUACCAGCAGUUAGAGUUCGCUCUAACAAAAGAAACAACAACAACAAC
+<strong>structure</strong> : …..((((((…….)))).)).((…..((..((((((….))))))..))…..))….(((((((….)))))))…………………</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>2D-Visualization</p></th>
+<th class="head"><p>Graph Structure</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><img alt="" src="https://www.googleapis.com/download/storage/v1/b/kaggle-forum-message-attachments/o/inbox%2F2907842%2Ff4f03d6b0b90cba4f89186d430497efb%2F__results___39_0.png?generation=1600167390547492&amp;alt=media" /></p></td>
+<td><p><img alt="" src="https://www.googleapis.com/download/storage/v1/b/kaggle-forum-message-attachments/o/inbox%2F2907842%2F0a5f81bd4af44a435e9fbe445c3069c5%2F__results___43_0.png?generation=1600167431782448&amp;alt=media" /></p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<p><strong>ID</strong> : id_000ae4237
+<strong>Sequence</strong>: GGAAACGGGUUCCGCGGAUUGCUGCUAAUAAGAGUAAUCUCUAAAUGCAGCUACCGGCUCUAUAAUGAGCAAAAACGGUAAAUCCCGACAAGCUUGAUUUCGAUCAAGCAAAAGAAACAACAACAACAAC
+<strong>structure</strong>: …..((((..((((((…(((((…..((((….))))….)))))..)))((((……))))…..)))…..))))….(((((((….)))))))…………………</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>2D-Visualization</p></th>
+<th class="head"><p>Graph Structure</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><img alt="" src="https://www.googleapis.com/download/storage/v1/b/kaggle-forum-message-attachments/o/inbox%2F2907842%2Fe53b559640b7218add3ce4315daf6133%2F__results___53_0.png?generation=1600168784222101&amp;alt=media" /></p></td>
+<td><p><img alt="" src="https://www.googleapis.com/download/storage/v1/b/kaggle-forum-message-attachments/o/inbox%2F2907842%2F480bf495e1643a28da8298cf8d6fdbe9%2F__results___56_0.png?generation=1600167957368207&amp;alt=media" /></p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<p><strong>ID</strong> : id_ff691b7e5
+<strong>Sequence</strong>: GGAAACUAGCCAUGGGCAGGUUGAAGGUUGGGUGACACUAACUGGAGGACCGAACCGACUAAUGUUGAAAAAUUAGCGGAUGACUUGUGGCGUGUCAGUUCGCUGACACAAAAGAAACAACAACAACAAC
+<strong>structure</strong>: ……..((((((((..((((…((((((……))))))….))))…(((.(((((……..))))))))….))))))))(((((((….)))))))…………………</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>2D-Visualization</p></th>
+<th class="head"><p>Graph Structure</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><img alt="" src="https://www.googleapis.com/download/storage/v1/b/kaggle-forum-message-attachments/o/inbox%2F2907842%2F01423ea4e1a602deb4d7a3c50e5a475f%2F__results___53_0.png?generation=1600169020071954&amp;alt=media" /></p></td>
+<td><p><img alt="" src="https://www.googleapis.com/download/storage/v1/b/kaggle-forum-message-attachments/o/inbox%2F2907842%2F421d273b06308f5b80f56a167a26b076%2F__results___56_0.png?generation=1600169045301675&amp;alt=media" /></p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<p><strong>What does this Graph Structure represent?</strong></p>
+<ul class="simple">
+<li><p><strong>fiveprime (f)</strong>: The unpaired nucleotides at the 5’ end of a molecule/ chain. Name always starts with ‘f’ (e.g. ‘f0’).</p></li>
+<li><p><strong>threeprime (t)</strong>: The unpaired nucleotides at the 3’ end of a molecule/ chain. Name always start with ‘t’ (e.g. ‘t0’)</p></li>
+<li><p><strong>stem (s)</strong>: Regions of contiguous canonical Watson-Crick base-paired nucleotides. By default, stems have at least 2 consecutive basepairs. Always start with ‘s’ (e.g., ‘s0’, ‘s1’, ‘s2’, …)</p></li>
+<li><p><strong>interior loop (i)</strong>: Bulged out nucleotides and interior loops. An interior loop can contain unpaired bases on either strand or on both strands, flanked by stems on either side. Always start with ‘i’ (‘i0’, ‘i1’, ‘i2’,…)</p></li>
+<li><p><strong>multiloop segment (m)</strong>: Single-stranded regions between two stems. Always start with ‘m’. (‘m0’, ‘m1’, ‘m2’…)</p></li>
+<li><p><strong>hairpin loop (h)</strong>: Always starts with ‘h’.</p></li>
+</ul>
+<div class="section" id="check-my-notebook-openvaccine-eda">
+<h2>Check My Notebook : <a class="reference external" href="https://www.kaggle.com/vatsalparsaniya/openvaccine-eda">💉OpenVaccine: EDA</a><a class="headerlink" href="#check-my-notebook-openvaccine-eda" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><a class="reference external" href="https://viennarna.github.io/forgi/graph_tutorial.html">Reference</a></p></li>
+</ul>
+<hr class="docutils" />
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Discussion_material"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="tsne_visualization.html" title="previous page">TSNE visualization</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Vatsal Parsaniya , Meet Ranoliya<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.30270b6e4c972e43c488.js"></script>
+
+
+    
+  </body>
+</html>

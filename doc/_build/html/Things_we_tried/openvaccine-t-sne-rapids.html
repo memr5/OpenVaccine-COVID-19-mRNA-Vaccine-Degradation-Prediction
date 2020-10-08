@@ -1,0 +1,1505 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>T-SNE - Rapids &#8212; 🍀 Co-weed&#39;19</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.bfb7730f9caf2ec0b46a44615585038c.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.30270b6e4c972e43c488.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Single Model Perfomance" href="../Our_solution/Single_model_Perfomance.html" />
+    <link rel="prev" title="structure augmentation" href="augmentation.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo_1.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">🍀 Co-weed'19</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Introduction/Introduction.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Project Overview
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Project_Overview/description.html">
+   Description
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Project_Overview/evaluation.html">
+   Evaluation
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Things we tried
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="CV_strategy.html">
+   Stratification by the signal_to_noise
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="openvaccine-feature-extraction.html">
+   Feature extraction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="augmentation.html">
+   structure augmentation
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   T-SNE - Rapids
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Our Solution
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Our_solution/Single_model_Perfomance.html">
+   Single Model Perfomance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Our_solution/openvaccine-model-training-augmentation.html">
+   Vatsal’s Code
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reference Material
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Reference_material/index.html">
+   Great_Material
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Discussion Forum Material
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Discussion_material/tsne_visualization.html">
+   TSNE visualization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Discussion_material/Graph_representation_of_RNA.html">
+   Graph representation of RNA
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Things_we_tried/openvaccine-t-sne-rapids.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Things_we_tried/openvaccine-t-sne-rapids.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/Things_we_tried/openvaccine-t-sne-rapids.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-data">
+   Load data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ohe-of-data">
+   OHE OF data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#method-for-get-tsne-2d-axis">
+   Method for get TSNE 2D axis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-tsne">
+   Plot TSNE
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#individual-data">
+     Individual data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#train-public">
+     Train + Public
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#all-data">
+     All data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bpps-data">
+     BPPS Data
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="t-sne-rapids">
+<h1>T-SNE - Rapids<a class="headerlink" href="#t-sne-rapids" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>NVIDIA created <a class="reference external" href="https://rapids.ai/">RAPIDS</a> – an open-source data analytics and machine learning acceleration platform that leverages GPUs to accelerate computations. RAPIDS is based on Python, has Pandas-like and Scikit-Learn-like interfaces, is built on Apache Arrow in-memory data format, and can scale from 1 to multi-GPU to multi-nodes. RAPIDS integrates easily into the world’s most popular data science Python-based workflows. RAPIDS accelerates data science end-to-end – from data prep, to machine learning, to deep learning</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>%%capture
+import sys
+!cp ../input/rapids/rapids.0.15.0 /opt/conda/envs/rapids.tar.gz
+!cd /opt/conda/envs/ &amp;&amp; tar -xzvf rapids.tar.gz &gt; /dev/null
+sys.path = [&quot;/opt/conda/envs/rapids/lib/python3.7/site-packages&quot;] + sys.path
+sys.path = [&quot;/opt/conda/envs/rapids/lib/python3.7&quot;] + sys.path
+sys.path = [&quot;/opt/conda/envs/rapids/lib&quot;] + sys.path 
+!cp /opt/conda/envs/rapids/lib/libxgboost.so /opt/conda/lib/
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cudf</span><span class="o">,</span> <span class="nn">cuml</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">cuml.manifold</span> <span class="k">import</span> <span class="n">TSNE</span>
+<span class="c1"># from sklearn.manifold import TSNE</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">combinations_with_replacement</span>
+<span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="k">import</span> <span class="n">ListedColormap</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">3</span><span class="n">f714b319b3a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">cudf</span><span class="o">,</span> <span class="nn">cuml</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">cuml.manifold</span> <span class="kn">import</span> <span class="n">TSNE</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># from sklearn.manifold import TSNE</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;cudf&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="load-data">
+<h2>Load data<a class="headerlink" href="#load-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_dir</span> <span class="o">=</span> <span class="s1">&#39;/kaggle/input/stanford-covid-vaccine/&#39;</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">data_dir</span> <span class="o">+</span> <span class="s1">&#39;train.json&#39;</span><span class="p">,</span> <span class="n">lines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">data_dir</span> <span class="o">+</span> <span class="s1">&#39;test.json&#39;</span><span class="p">,</span> <span class="n">lines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sample_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_dir</span> <span class="o">+</span> <span class="s1">&#39;sample_submission.csv&#39;</span><span class="p">)</span>
+
+<span class="n">public_df</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;seq_length == 107&quot;</span><span class="p">)</span>
+<span class="n">private_df</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;seq_length == 130&quot;</span><span class="p">)</span>
+
+<span class="n">pred_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;reactivity&#39;</span><span class="p">,</span> <span class="s1">&#39;deg_Mg_pH10&#39;</span><span class="p">,</span> <span class="s1">&#39;deg_pH10&#39;</span><span class="p">,</span> <span class="s1">&#39;deg_Mg_50C&#39;</span><span class="p">,</span> <span class="s1">&#39;deg_50C&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Train</span>
+<span class="n">train_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;sequence&#39;</span><span class="p">,</span><span class="s1">&#39;structure&#39;</span><span class="p">,</span><span class="s1">&#39;predicted_loop_type&#39;</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">train</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+            <span class="n">char_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">sentence</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">char_list</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">f</span><span class="s2">&quot;</span><span class="si">{col}</span><span class="s2">_{str(i)}&quot;</span> <span class="ow">in</span> <span class="n">train_dict</span><span class="p">:</span>
+                    <span class="n">train_dict</span><span class="p">[</span><span class="n">f</span><span class="s2">&quot;</span><span class="si">{col}</span><span class="s2">_{str(i)}&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">train_dict</span><span class="p">[</span><span class="n">f</span><span class="s2">&quot;</span><span class="si">{col}</span><span class="s2">_{str(i)}&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="p">]</span>
+                    
+<span class="c1"># public_df   </span>
+<span class="n">public_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;sequence&#39;</span><span class="p">,</span><span class="s1">&#39;structure&#39;</span><span class="p">,</span><span class="s1">&#39;predicted_loop_type&#39;</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">public_df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+            <span class="n">char_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">sentence</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">char_list</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">f</span><span class="s2">&quot;</span><span class="si">{col}</span><span class="s2">_{str(i)}&quot;</span> <span class="ow">in</span> <span class="n">public_dict</span><span class="p">:</span>
+                    <span class="n">public_dict</span><span class="p">[</span><span class="n">f</span><span class="s2">&quot;</span><span class="si">{col}</span><span class="s2">_{str(i)}&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">public_dict</span><span class="p">[</span><span class="n">f</span><span class="s2">&quot;</span><span class="si">{col}</span><span class="s2">_{str(i)}&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="p">]</span>
+                    
+<span class="c1"># private_df  </span>
+<span class="n">private_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;sequence&#39;</span><span class="p">,</span><span class="s1">&#39;structure&#39;</span><span class="p">,</span><span class="s1">&#39;predicted_loop_type&#39;</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">private_df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+            <span class="n">char_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">sentence</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">char_list</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">f</span><span class="s2">&quot;</span><span class="si">{col}</span><span class="s2">_{str(i)}&quot;</span> <span class="ow">in</span> <span class="n">private_dict</span><span class="p">:</span>
+                    <span class="n">private_dict</span><span class="p">[</span><span class="n">f</span><span class="s2">&quot;</span><span class="si">{col}</span><span class="s2">_{str(i)}&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">private_dict</span><span class="p">[</span><span class="n">f</span><span class="s2">&quot;</span><span class="si">{col}</span><span class="s2">_{str(i)}&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">train_dict</span><span class="p">)</span>
+<span class="n">train_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sequence_0</th>
+      <th>sequence_1</th>
+      <th>sequence_2</th>
+      <th>sequence_3</th>
+      <th>sequence_4</th>
+      <th>sequence_5</th>
+      <th>sequence_6</th>
+      <th>sequence_7</th>
+      <th>sequence_8</th>
+      <th>sequence_9</th>
+      <th>...</th>
+      <th>predicted_loop_type_97</th>
+      <th>predicted_loop_type_98</th>
+      <th>predicted_loop_type_99</th>
+      <th>predicted_loop_type_100</th>
+      <th>predicted_loop_type_101</th>
+      <th>predicted_loop_type_102</th>
+      <th>predicted_loop_type_103</th>
+      <th>predicted_loop_type_104</th>
+      <th>predicted_loop_type_105</th>
+      <th>predicted_loop_type_106</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>G</td>
+      <td>G</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>G</td>
+      <td>C</td>
+      <td>U</td>
+      <td>C</td>
+      <td>...</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>G</td>
+      <td>G</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>G</td>
+      <td>C</td>
+      <td>G</td>
+      <td>...</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>G</td>
+      <td>G</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>G</td>
+      <td>U</td>
+      <td>G</td>
+      <td>C</td>
+      <td>U</td>
+      <td>...</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>G</td>
+      <td>G</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>G</td>
+      <td>C</td>
+      <td>G</td>
+      <td>C</td>
+      <td>...</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>G</td>
+      <td>G</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>A</td>
+      <td>U</td>
+      <td>A</td>
+      <td>U</td>
+      <td>A</td>
+      <td>...</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+      <td>E</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 321 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="ohe-of-data">
+<h2>OHE OF data<a class="headerlink" href="#ohe-of-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_df_one_hot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">train_df</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">col</span><span class="p">,</span><span class="n">chars</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="s1">&#39;sequence&#39;</span><span class="p">,</span><span class="s1">&#39;structure&#39;</span><span class="p">,</span><span class="s1">&#39;predicted_loop_type&#39;</span><span class="p">],[[</span><span class="s1">&#39;G&#39;</span><span class="p">,</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">],[</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;(&#39;</span><span class="p">,</span> <span class="s1">&#39;)&#39;</span><span class="p">],[</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;I&#39;</span><span class="p">,</span><span class="s1">&#39;M&#39;</span><span class="p">]]):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">col</span><span class="p">,</span><span class="n">chars</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">107</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">chars</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">f</span><span class="s2">&quot;</span><span class="si">{col}</span><span class="s2">_</span><span class="si">{i}</span><span class="s2">_</span><span class="si">{char}</span><span class="s2">&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">train_df_one_hot</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+                <span class="n">train_df_one_hot</span><span class="p">[</span><span class="n">f</span><span class="s2">&quot;</span><span class="si">{col}</span><span class="s2">_</span><span class="si">{i}</span><span class="s2">_</span><span class="si">{char}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1">#                 print(&quot;Column&quot;,f&quot;{col}_{i}_{char}&quot;, &quot;Added&quot;)</span>
+<span class="n">train_df_one_hot</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sequence [&#39;G&#39;, &#39;A&#39;, &#39;C&#39;, &#39;U&#39;]
+structure [&#39;.&#39;, &#39;(&#39;, &#39;)&#39;]
+predicted_loop_type [&#39;E&#39;, &#39;S&#39;, &#39;H&#39;, &#39;B&#39;, &#39;X&#39;, &#39;I&#39;, &#39;M&#39;]
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sequence_0_G</th>
+      <th>sequence_1_G</th>
+      <th>sequence_2_A</th>
+      <th>sequence_3_A</th>
+      <th>sequence_4_A</th>
+      <th>sequence_5_A</th>
+      <th>sequence_5_C</th>
+      <th>sequence_5_G</th>
+      <th>sequence_5_U</th>
+      <th>sequence_6_A</th>
+      <th>...</th>
+      <th>predicted_loop_type_105_B</th>
+      <th>predicted_loop_type_105_X</th>
+      <th>predicted_loop_type_105_I</th>
+      <th>predicted_loop_type_105_M</th>
+      <th>predicted_loop_type_106_S</th>
+      <th>predicted_loop_type_106_H</th>
+      <th>predicted_loop_type_106_B</th>
+      <th>predicted_loop_type_106_X</th>
+      <th>predicted_loop_type_106_I</th>
+      <th>predicted_loop_type_106_M</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 1498 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">select_features</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">public_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">public_dict</span><span class="p">)</span>
+<span class="n">public_df_one_hot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">public_df</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">col</span><span class="p">,</span><span class="n">chars</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="s1">&#39;sequence&#39;</span><span class="p">,</span><span class="s1">&#39;structure&#39;</span><span class="p">,</span><span class="s1">&#39;predicted_loop_type&#39;</span><span class="p">],[[</span><span class="s1">&#39;G&#39;</span><span class="p">,</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">],[</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;(&#39;</span><span class="p">,</span> <span class="s1">&#39;)&#39;</span><span class="p">],[</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;I&#39;</span><span class="p">,</span><span class="s1">&#39;M&#39;</span><span class="p">]]):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">107</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">chars</span><span class="p">:</span>
+            <span class="n">select_features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;</span><span class="si">{col}</span><span class="s2">_</span><span class="si">{i}</span><span class="s2">_</span><span class="si">{char}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">f</span><span class="s2">&quot;</span><span class="si">{col}</span><span class="s2">_</span><span class="si">{i}</span><span class="s2">_</span><span class="si">{char}</span><span class="s2">&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">public_df_one_hot</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+                <span class="n">public_df_one_hot</span><span class="p">[</span><span class="n">f</span><span class="s2">&quot;</span><span class="si">{col}</span><span class="s2">_</span><span class="si">{i}</span><span class="s2">_</span><span class="si">{char}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1">#                 print(&quot;Column&quot;,f&quot;{col}_{i}_{char}&quot;, &quot;Added&quot;)</span>
+<span class="n">public_df_one_hot</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sequence_0_G</th>
+      <th>sequence_1_G</th>
+      <th>sequence_2_A</th>
+      <th>sequence_3_A</th>
+      <th>sequence_4_A</th>
+      <th>sequence_5_A</th>
+      <th>sequence_5_C</th>
+      <th>sequence_5_G</th>
+      <th>sequence_5_U</th>
+      <th>sequence_6_A</th>
+      <th>...</th>
+      <th>predicted_loop_type_105_B</th>
+      <th>predicted_loop_type_105_X</th>
+      <th>predicted_loop_type_105_I</th>
+      <th>predicted_loop_type_105_M</th>
+      <th>predicted_loop_type_106_S</th>
+      <th>predicted_loop_type_106_H</th>
+      <th>predicted_loop_type_106_B</th>
+      <th>predicted_loop_type_106_X</th>
+      <th>predicted_loop_type_106_I</th>
+      <th>predicted_loop_type_106_M</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 1498 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">private_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">private_dict</span><span class="p">)</span>
+<span class="n">private_df_one_hot</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">private_df</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">col</span><span class="p">,</span><span class="n">chars</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="s1">&#39;sequence&#39;</span><span class="p">,</span><span class="s1">&#39;structure&#39;</span><span class="p">,</span><span class="s1">&#39;predicted_loop_type&#39;</span><span class="p">],[[</span><span class="s1">&#39;G&#39;</span><span class="p">,</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">],[</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;(&#39;</span><span class="p">,</span> <span class="s1">&#39;)&#39;</span><span class="p">],[</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;I&#39;</span><span class="p">,</span><span class="s1">&#39;M&#39;</span><span class="p">]]):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">130</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">chars</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">f</span><span class="s2">&quot;</span><span class="si">{col}</span><span class="s2">_</span><span class="si">{i}</span><span class="s2">_</span><span class="si">{char}</span><span class="s2">&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">private_df_one_hot</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+                <span class="n">private_df_one_hot</span><span class="p">[</span><span class="n">f</span><span class="s2">&quot;</span><span class="si">{col}</span><span class="s2">_</span><span class="si">{i}</span><span class="s2">_</span><span class="si">{char}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1">#                 print(&quot;Column&quot;,f&quot;{col}_{i}_{char}&quot;, &quot;Added&quot;)</span>
+<span class="n">private_df_one_hot</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sequence_0_G</th>
+      <th>sequence_1_G</th>
+      <th>sequence_2_A</th>
+      <th>sequence_3_A</th>
+      <th>sequence_4_A</th>
+      <th>sequence_5_A</th>
+      <th>sequence_5_C</th>
+      <th>sequence_5_G</th>
+      <th>sequence_5_U</th>
+      <th>sequence_6_A</th>
+      <th>...</th>
+      <th>predicted_loop_type_128_B</th>
+      <th>predicted_loop_type_128_X</th>
+      <th>predicted_loop_type_128_I</th>
+      <th>predicted_loop_type_128_M</th>
+      <th>predicted_loop_type_129_S</th>
+      <th>predicted_loop_type_129_H</th>
+      <th>predicted_loop_type_129_B</th>
+      <th>predicted_loop_type_129_X</th>
+      <th>predicted_loop_type_129_I</th>
+      <th>predicted_loop_type_129_M</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 1820 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Train Features Shape : &quot;</span><span class="p">,</span><span class="n">train_df_one_hot</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Public Features Shape : &quot;</span><span class="p">,</span><span class="n">public_df_one_hot</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;private Features Shape : &quot;</span><span class="p">,</span><span class="n">private_df_one_hot</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Train Features Shape :  (2400, 1498)
+Public Features Shape :  (629, 1498)
+private Features Shape :  (3005, 1820)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="method-for-get-tsne-2d-axis">
+<h2>Method for get TSNE 2D axis<a class="headerlink" href="#method-for-get-tsne-2d-axis" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_tsne</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+    <span class="n">X_reshape</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">tsne</span> <span class="o">=</span> <span class="n">TSNE</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span> <span class="p">,</span><span class="n">init</span><span class="o">=</span><span class="s1">&#39;pca&#39;</span><span class="p">,</span> <span class="n">n_iter</span><span class="o">=</span><span class="mi">2500</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">23</span><span class="p">)</span>
+    <span class="n">X_reshape_2D</span> <span class="o">=</span> <span class="n">tsne</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_reshape</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">X_reshape_2D</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plot-tsne">
+<h2>Plot TSNE<a class="headerlink" href="#plot-tsne" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="individual-data">
+<h3>Individual data<a class="headerlink" href="#individual-data" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span><span class="n">ax2</span><span class="p">,</span><span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Apply TSNE on Individual data (Original Features Only) : [&#39;sequence&#39;,&#39;structure&#39;,&#39;predicted_loop_type&#39;]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+
+<span class="n">train_2D</span> <span class="o">=</span> <span class="n">get_tsne</span><span class="p">(</span><span class="n">train_df_one_hot</span><span class="p">[</span><span class="n">select_features</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">train_SN_filter</span> <span class="o">=</span> <span class="n">train_SN_filter</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;SN_filter&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">classes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;SN_filter == 0&#39;</span><span class="p">,</span> <span class="s1">&#39;SN_filter == 1&#39;</span><span class="p">]</span>
+<span class="n">colours</span> <span class="o">=</span> <span class="n">ListedColormap</span><span class="p">([</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">])</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Train Inputs&quot;</span><span class="p">)</span>
+<span class="n">scatter</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">train_2D</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">train_2D</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="n">train_SN_filter</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="n">colours</span><span class="p">,</span><span class="n">s</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="o">=</span><span class="n">scatter</span><span class="o">.</span><span class="n">legend_elements</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">labels</span><span class="o">=</span><span class="n">classes</span><span class="p">)</span>
+
+<span class="n">public_2D</span> <span class="o">=</span> <span class="n">get_tsne</span><span class="p">(</span><span class="n">public_df_one_hot</span><span class="p">[</span><span class="n">select_features</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">scatter</span> <span class="o">=</span> <span class="n">ax2</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">public_2D</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">public_2D</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">s</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Public Inputs&quot;</span><span class="p">)</span>
+
+<span class="n">private_2D</span> <span class="o">=</span> <span class="n">get_tsne</span><span class="p">(</span><span class="n">private_df_one_hot</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">scatter</span> <span class="o">=</span> <span class="n">ax3</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">private_2D</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">private_2D</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">s</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Private Inputs&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;0.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/openvaccine-t-sne-rapids_17_0.png" src="../_images/openvaccine-t-sne-rapids_17_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="train-public">
+<h3>Train + Public<a class="headerlink" href="#train-public" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_public</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">train_df_one_hot</span><span class="p">[</span><span class="n">select_features</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">public_df_one_hot</span><span class="p">[</span><span class="n">select_features</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Train Features Shape : &quot;</span><span class="p">,</span><span class="n">train_df_one_hot</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Public Features Shape : &quot;</span><span class="p">,</span><span class="n">public_df_one_hot</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;test_public Shape: &quot;</span><span class="p">,</span><span class="n">test_public</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="n">test_public_2D</span> <span class="o">=</span> <span class="n">get_tsne</span><span class="p">(</span><span class="n">test_public</span><span class="p">)</span>
+<span class="n">test_public_y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">train_df_one_hot</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">public_df_one_hot</span><span class="p">)</span> 
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Apply TSNE Public+Train data&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">classes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;T rain&#39;</span><span class="p">,</span> <span class="s1">&#39;Public&#39;</span><span class="p">]</span>
+<span class="n">colours</span> <span class="o">=</span> <span class="n">ListedColormap</span><span class="p">([</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">])</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Used One Hot-Encoded Features&quot;</span><span class="p">)</span>
+<span class="n">scatter</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">test_public_2D</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">test_public_2D</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="n">test_public_y</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="n">colours</span><span class="p">,</span><span class="n">s</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="o">=</span><span class="n">scatter</span><span class="o">.</span><span class="n">legend_elements</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">labels</span><span class="o">=</span><span class="n">classes</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;1.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Train Features Shape :  (2400, 1498)
+Public Features Shape :  (629, 1498)
+test_public Shape:  (3029, 1498)
+</pre></div>
+</div>
+<img alt="../_images/openvaccine-t-sne-rapids_19_1.png" src="../_images/openvaccine-t-sne-rapids_19_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="all-data">
+<h3>All data<a class="headerlink" href="#all-data" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_all</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">train_df_one_hot</span><span class="p">[</span><span class="n">select_features</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">public_df_one_hot</span><span class="p">[</span><span class="n">select_features</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">private_df_one_hot</span><span class="p">[</span><span class="n">select_features</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Train Features Shape : &quot;</span><span class="p">,</span><span class="n">train_df_one_hot</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Public Features Shape : &quot;</span><span class="p">,</span><span class="n">public_df_one_hot</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;private Features Shape : &quot;</span><span class="p">,</span><span class="n">private_df_one_hot</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X_all Shape: &quot;</span><span class="p">,</span><span class="n">X_all</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="n">X_all_2D</span> <span class="o">=</span> <span class="n">get_tsne</span><span class="p">(</span><span class="n">X_all</span><span class="p">)</span>
+<span class="n">X_all_y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">train_df_one_hot</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">public_df_one_hot</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">private_df_one_hot</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Apply TSNE all data&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">classes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;T rain&#39;</span><span class="p">,</span> <span class="s1">&#39;Public&#39;</span><span class="p">,</span> <span class="s1">&#39;Private&#39;</span><span class="p">]</span>
+<span class="n">colours</span> <span class="o">=</span> <span class="n">ListedColormap</span><span class="p">([</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">])</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Used 107 Length on Private data&quot;</span><span class="p">)</span>
+<span class="n">scatter</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_all_2D</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X_all_2D</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="n">X_all_y</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="n">colours</span><span class="p">,</span><span class="n">s</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="o">=</span><span class="n">scatter</span><span class="o">.</span><span class="n">legend_elements</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">labels</span><span class="o">=</span><span class="n">classes</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;2.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Train Features Shape :  (2400, 1498)
+Public Features Shape :  (629, 1498)
+private Features Shape :  (3005, 1820)
+X_all Shape:  (6034, 1498)
+</pre></div>
+</div>
+<img alt="../_images/openvaccine-t-sne-rapids_21_1.png" src="../_images/openvaccine-t-sne-rapids_21_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="bpps-data">
+<h3>BPPS Data<a class="headerlink" href="#bpps-data" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## https://www.kaggle.com/its7171/dangerous-features</span>
+<span class="n">public_df</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;seq_length == 107&quot;</span><span class="p">)</span>
+<span class="n">private_df</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;seq_length == 130&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">read_bpps_max</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">bpps_arr</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">mol_id</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">to_list</span><span class="p">():</span>
+        <span class="n">bpps_arr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;../input/stanford-covid-vaccine/bpps/</span><span class="si">{mol_id}</span><span class="s2">.npy&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">bpps_arr</span>
+
+<span class="k">def</span> <span class="nf">read_bpps_sum</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">bpps_arr</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">mol_id</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">to_list</span><span class="p">():</span>
+        <span class="n">bpps_arr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;../input/stanford-covid-vaccine/bpps/</span><span class="si">{mol_id}</span><span class="s2">.npy&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">bpps_arr</span>
+
+<span class="k">def</span> <span class="nf">read_bpps_nb</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">bpps_arr</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">mol_id</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">to_list</span><span class="p">():</span>
+        <span class="n">bpps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;../input/stanford-covid-vaccine/bpps/</span><span class="si">{mol_id}</span><span class="s2">.npy&quot;</span><span class="p">)</span>
+        <span class="n">bpps_nb</span> <span class="o">=</span> <span class="p">(</span><span class="n">bpps</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="n">bpps</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">bpps_arr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bpps_nb</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">bpps_arr</span> 
+
+<span class="n">train</span><span class="p">[</span><span class="s1">&#39;bpps_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">read_bpps_max</span><span class="p">(</span><span class="n">train</span><span class="p">)</span>
+<span class="n">public_df</span><span class="p">[</span><span class="s1">&#39;bpps_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">read_bpps_max</span><span class="p">(</span><span class="n">public_df</span><span class="p">)</span>
+<span class="n">private_df</span><span class="p">[</span><span class="s1">&#39;bpps_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">read_bpps_max</span><span class="p">(</span><span class="n">private_df</span><span class="p">)</span>
+
+<span class="n">train</span><span class="p">[</span><span class="s1">&#39;bpps_sum&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">read_bpps_sum</span><span class="p">(</span><span class="n">train</span><span class="p">)</span>
+<span class="n">public_df</span><span class="p">[</span><span class="s1">&#39;bpps_sum&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">read_bpps_sum</span><span class="p">(</span><span class="n">public_df</span><span class="p">)</span>
+<span class="n">private_df</span><span class="p">[</span><span class="s1">&#39;bpps_sum&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">read_bpps_sum</span><span class="p">(</span><span class="n">private_df</span><span class="p">)</span>
+
+<span class="n">train</span><span class="p">[</span><span class="s1">&#39;bpps_nb&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">read_bpps_nb</span><span class="p">(</span><span class="n">train</span><span class="p">)</span>
+<span class="n">public_df</span><span class="p">[</span><span class="s1">&#39;bpps_nb&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">read_bpps_nb</span><span class="p">(</span><span class="n">public_df</span><span class="p">)</span>
+<span class="n">private_df</span><span class="p">[</span><span class="s1">&#39;bpps_nb&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">read_bpps_nb</span><span class="p">(</span><span class="n">private_df</span><span class="p">)</span>
+
+<span class="n">train_bpps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">train</span><span class="p">[[</span><span class="s1">&#39;bpps_max&#39;</span><span class="p">,</span><span class="s1">&#39;bpps_sum&#39;</span><span class="p">,</span><span class="s1">&#39;bpps_nb&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()),(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">public_bpps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">public_df</span><span class="p">[[</span><span class="s1">&#39;bpps_max&#39;</span><span class="p">,</span><span class="s1">&#39;bpps_sum&#39;</span><span class="p">,</span><span class="s1">&#39;bpps_nb&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()),(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">private_bpps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">private_df</span><span class="p">[[</span><span class="s1">&#39;bpps_max&#39;</span><span class="p">,</span><span class="s1">&#39;bpps_sum&#39;</span><span class="p">,</span><span class="s1">&#39;bpps_nb&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()),(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;train_bpps Shape : &quot;</span><span class="p">,</span><span class="n">train_bpps</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;public_bpps Shape : &quot;</span><span class="p">,</span><span class="n">public_bpps</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;private_bpps Shape : &quot;</span><span class="p">,</span><span class="n">private_bpps</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>train_bpps Shape :  (2400, 107, 3)
+public_bpps Shape :  (629, 107, 3)
+private_bpps Shape :  (3005, 130, 3)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BPPS Feaures TSNE on individual columns</span>
+
+<span class="n">train_public_private_bpps_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">train_bpps</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">public_bpps</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">],</span><span class="n">private_bpps</span><span class="p">[:,:</span><span class="mi">107</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">train_public_private_bpps_sum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">train_bpps</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">public_bpps</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">],</span><span class="n">private_bpps</span><span class="p">[:,:</span><span class="mi">107</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">train_public_private_bpps_nb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">train_bpps</span><span class="p">[:,:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">public_bpps</span><span class="p">[:,:,</span><span class="mi">2</span><span class="p">],</span><span class="n">private_bpps</span><span class="p">[:,:</span><span class="mi">107</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;train_public_private_bpps_max Shape : &quot;</span><span class="p">,</span><span class="n">train_public_private_bpps_max</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;train_public_private_bpps_sum Shape : &quot;</span><span class="p">,</span><span class="n">train_public_private_bpps_sum</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;train_public_private_bpps_nb Shape : &quot;</span><span class="p">,</span><span class="n">train_public_private_bpps_nb</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="n">yy</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">train_bpps</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">public_bpps</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">private_bpps</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span><span class="n">ax2</span><span class="p">,</span><span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Apply TSNE on Individual BPPS data : [&#39;MAX&#39;,&#39;SUM&#39;,&#39;nb&#39;]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+
+<span class="n">train_public_private_bpps_max_2D</span> <span class="o">=</span> <span class="n">get_tsne</span><span class="p">(</span><span class="n">train_public_private_bpps_max</span><span class="p">)</span>
+<span class="n">classes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;train_bpps&#39;</span><span class="p">,</span><span class="s1">&#39;public_bpps&#39;</span><span class="p">,</span><span class="s1">&#39;private_bpps&#39;</span><span class="p">]</span>
+<span class="n">colours</span> <span class="o">=</span> <span class="n">ListedColormap</span><span class="p">([</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">])</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;MAX&quot;</span><span class="p">)</span>
+<span class="n">scatter</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">train_public_private_bpps_max_2D</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">train_public_private_bpps_max_2D</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="n">yy</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="n">colours</span><span class="p">,</span><span class="n">s</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="o">=</span><span class="n">scatter</span><span class="o">.</span><span class="n">legend_elements</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">labels</span><span class="o">=</span><span class="n">classes</span><span class="p">)</span>
+
+<span class="n">train_public_private_bpps_sum_2D</span> <span class="o">=</span> <span class="n">get_tsne</span><span class="p">(</span><span class="n">train_public_private_bpps_sum</span><span class="p">)</span>
+<span class="n">classes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;train_bpps&#39;</span><span class="p">,</span><span class="s1">&#39;public_bpps&#39;</span><span class="p">,</span><span class="s1">&#39;private_bpps&#39;</span><span class="p">]</span>
+<span class="n">colours</span> <span class="o">=</span> <span class="n">ListedColormap</span><span class="p">([</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">])</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;MAX&quot;</span><span class="p">)</span>
+<span class="n">scatter</span> <span class="o">=</span> <span class="n">ax2</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">train_public_private_bpps_sum_2D</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">train_public_private_bpps_sum_2D</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="n">yy</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="n">colours</span><span class="p">,</span><span class="n">s</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="o">=</span><span class="n">scatter</span><span class="o">.</span><span class="n">legend_elements</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">labels</span><span class="o">=</span><span class="n">classes</span><span class="p">)</span>
+
+<span class="n">train_public_private_bpps_nb_2D</span> <span class="o">=</span> <span class="n">get_tsne</span><span class="p">(</span><span class="n">train_public_private_bpps_nb</span><span class="p">)</span>
+<span class="n">classes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;train_bpps&#39;</span><span class="p">,</span><span class="s1">&#39;public_bpps&#39;</span><span class="p">,</span><span class="s1">&#39;private_bpps&#39;</span><span class="p">]</span>
+<span class="n">colours</span> <span class="o">=</span> <span class="n">ListedColormap</span><span class="p">([</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">])</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;NB&quot;</span><span class="p">)</span>
+<span class="n">scatter</span> <span class="o">=</span> <span class="n">ax3</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">train_public_private_bpps_nb_2D</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">train_public_private_bpps_nb_2D</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="n">yy</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="n">colours</span><span class="p">,</span><span class="n">s</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="o">=</span><span class="n">scatter</span><span class="o">.</span><span class="n">legend_elements</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">labels</span><span class="o">=</span><span class="n">classes</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;3.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>train_public_private_bpps_max Shape :  (6034, 107)
+train_public_private_bpps_sum Shape :  (6034, 107)
+train_public_private_bpps_nb Shape :  (6034, 107)
+</pre></div>
+</div>
+<img alt="../_images/openvaccine-t-sne-rapids_24_1.png" src="../_images/openvaccine-t-sne-rapids_24_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BPPS Feaures TSNE</span>
+
+<span class="n">train_public_private_bpps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">train_bpps</span><span class="p">,</span> <span class="n">public_bpps</span><span class="p">,</span><span class="n">private_bpps</span><span class="p">[:,:</span><span class="mi">107</span><span class="p">,:]])</span>
+<span class="n">train_public_private_bpps_2D</span> <span class="o">=</span> <span class="n">get_tsne</span><span class="p">(</span><span class="n">train_public_private_bpps</span><span class="p">)</span>
+<span class="n">train_public_private_bpps_y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">train_bpps</span><span class="p">)</span><span class="o">+</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">public_bpps</span><span class="p">)</span><span class="o">+</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">private_bpps</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;train_public_private_input shape : &quot;</span><span class="p">,</span><span class="n">train_public_private_bpps</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Apply TSNE on BPPS Feaures [&#39;bpps_max&#39;,&#39;bpps_sum&#39;,&#39;bpps_nb&#39;]&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">classes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Train&#39;</span><span class="p">,</span> <span class="s1">&#39;Public&#39;</span><span class="p">,</span> <span class="s1">&#39;Private&#39;</span><span class="p">]</span>
+<span class="n">colours</span> <span class="o">=</span> <span class="n">ListedColormap</span><span class="p">([</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">])</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Used 107 Length on Private data&quot;</span><span class="p">)</span>
+<span class="n">scatter</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">train_public_private_bpps_2D</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">train_public_private_bpps_2D</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="n">train_public_private_bpps_y</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="n">colours</span><span class="p">,</span><span class="n">s</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="o">=</span><span class="n">scatter</span><span class="o">.</span><span class="n">legend_elements</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">labels</span><span class="o">=</span><span class="n">classes</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;4.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>train_public_private_input shape :  (6034, 107, 3)
+</pre></div>
+</div>
+<img alt="../_images/openvaccine-t-sne-rapids_25_1.png" src="../_images/openvaccine-t-sne-rapids_25_1.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Things_we_tried"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="augmentation.html" title="previous page">structure augmentation</a>
+    <a class='right-next' id="next-link" href="../Our_solution/Single_model_Perfomance.html" title="next page">Single Model Perfomance</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Vatsal Parsaniya , Meet Ranoliya<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.30270b6e4c972e43c488.js"></script>
+
+
+    
+  </body>
+</html>
