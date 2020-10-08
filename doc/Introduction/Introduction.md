@@ -19,7 +19,7 @@ We ([Vatsal](https://www.kaggle.com/vatsalparsaniya) & [Meet](https://www.kaggle
 
 |Linkedin|Github|Kaggle|Twitter|Instagram|
 |--|--|--|--|--|
-|[![](https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg)](https://linkedin.com/in/vatsal-parsaniya)|[![](https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg)](https://kaggle.com/vatsalparsaniya)|[![](https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/kaggle.svg)](https://github.com/Vatsalparsaniya)|[![](https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/twitter.svg)](https://twitter.com/vatsalparsaniya)|[![](https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/instagram.svg)](https://instagram.com/vatsal_parsaniya)|
+|[![](https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg)](https://linkedin.com/in/vatsal-parsaniya)|[![](https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg)](https://github.com/Vatsalparsaniya)|[![](https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/kaggle.svg)](https://kaggle.com/vatsalparsaniya)|[![](https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/twitter.svg)](https://twitter.com/vatsalparsaniya)|[![](https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/instagram.svg)](https://instagram.com/vatsal_parsaniya)|
 
 ---
 
