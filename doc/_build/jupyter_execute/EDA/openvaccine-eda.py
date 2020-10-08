@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Vatsal's EDA
+# # EDA by Vatsal
 
 # ![vaccine-image.jpg](Images/head.jpg)
 
