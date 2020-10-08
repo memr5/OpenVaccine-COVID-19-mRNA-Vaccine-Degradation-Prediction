@@ -1,4 +1,4 @@
-# Introduction
+# 🙋🏻‍♂️ Introduction
 
 <h2 align='middle'>OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction</h2>
 <h3 align='middle'>Urgent need to bring the COVID-19 vaccine to mass production</h3>
